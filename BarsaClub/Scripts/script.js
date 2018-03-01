@@ -334,10 +334,11 @@ function HideApply(){
     $('#apply').css('opacity', '0');
     //$('#apply').addClass("disappearToBottom");
 }
-function ShowPayApply(){
+function ShowPayApply(sum){
     //$('#apply').addClass("appearFromBottom");
     $('#pay').css('display', 'block');
     $('#pay').css('opacity', '1');
+    $('#pay').find('#sum').val(sum);
 }
 function ShowApply(){
     //$('#apply').addClass("appearFromBottom");

@@ -1,0 +1,28 @@
+﻿@model BarsaClub.Models.RedirectPaymetModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Оплата абонемента</title>
+</head>
+<body>
+    <div>
+        <p>@Model.Name, Вы приобретаете абонемент за @Model.Sum р.</p>
+        <p>Сейчас вы будете перенаправлены на страницу оплаты.</p>
+
+        @{
+            var sum = String.Format("{0:0.00}", Model.Sum).Replace(',', '.');
+            var name = HttpUtility.UrlEncode(Model.Name);
+            var phone = HttpUtility.UrlEncode(Model.Phone);
+        }
+       
+        <script>
+            setTimeout(() => {
+                location.href = 'https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=@Model.MerchantLogin&OutSum=@sum&InvId=0&Shp_email=@Model.Email&Shp_name=@name&Shp_phone=@phone&SignatureValue=@Model.GetSignature()&IsTest=1'
+            }, 2000);
+        </script>
+    </div>
+</body>
+</html>

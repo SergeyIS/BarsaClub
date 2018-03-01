@@ -1,22 +1,24 @@
-﻿@model BarsaClub.Models.TrialWorkoutModel
+﻿
+@{
+    Layout = null;
+}
 
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Успешная запись</title>
+    <title>Оплата не произведена</title>
 </head>
 <body>
     <div>
-        <p>@Model.NameField, Вы успешно записаны на тренировку</p>
-        <p>@Model.DateField, уровень @Model.LevelSelect</p>
+        <p>К сожалению, оплата не произведена</p>
         <p>Сейчас вы будете перенаправлены на главную страницу</p>
-        <script>
+    </div>
+    <script>
             setTimeout(() => {
                 location.href = '/'
             }, 2000);
-        </script>
-    </div>
+    </script>
 </body>
 </html>

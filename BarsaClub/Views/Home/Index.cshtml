@@ -18,24 +18,25 @@
 <body id="page-top">
     <div class="apply-form animated" id="pay" style="display:none;">
         <a id="back_pay" href="#" onclick="HidePayApply()"></a>
-        <form class="field-container">
+        <form class="field-container" action="/home/pay" method="post">
             <div class="close-container">
                 <button class="close-button" type="reset" onclick="HidePayApply()">
                     <img src="/Content/Images/Icons/close.png">
                 </button>
             </div>
             <div class="field">
-                <input type="text" name="payname_field" id="payname_field" placeholder="ИМЯ...|">
+                <input type="text" name="name" id="payname_field" placeholder="ИМЯ...|">
             </div>
             <div class="field">
-                <input type="text" name="payemail" id="payemail_field" placeholder="E-MAIl...|">
+                <input type="text" name="email" id="payemail_field" placeholder="E-MAIl...|">
             </div>
             <div class="field">
-                <input type="tel" name="payphone" id="payphone" placeholder="ТЕЛЕФОН...|">
+                <input type="tel" name="phone" id="payphone" placeholder="ТЕЛЕФОН...|">
             </div>
             <div class="submit-input">
                 <button class="button try-button submit-button" type="submit"><span>Отправить</span></button>
             </div>
+            <input type="text" name="sum" id="sum" hidden/>
         </form>
     </div>
     <div class="apply-form animated" id="apply" style="display:none;">
@@ -1020,7 +1021,7 @@
                                     <span><strong>2500 Р</strong></span>
                                 </div>
                                 <div class="text-center">
-                                    <button class="button buy-button" onclick="ShowPayApply()">
+                                    <button class="button buy-button" onclick="ShowPayApply(2500)">
                                         <span>Купить ></span>
                                     </button>
                                 </div>
@@ -1041,7 +1042,7 @@
                                     <span><strong>4000 Р</strong></span>
                                 </div>
                                 <div class="text-center">
-                                    <button class="button buy-button" onclick="ShowPayApply()">
+                                    <button class="button buy-button" onclick="ShowPayApply(4000)">
                                         <span>Купить ></span>
                                     </button>
                                 </div>
