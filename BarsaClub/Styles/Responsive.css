@@ -311,22 +311,22 @@
         min-height: 750px;
     }
     #learn.classic{
-        background-image: url(../Images/backgrounds/Classic.jpg);
+        background-image: url(../Content/Images/backgrounds/Classic.jpg);
     }
     #learn.beach{
-        background-image: url(../Images/backgrounds/Beach.jpg);
+        background-image: url(../Content/Images/backgrounds/Beach.jpg);
     }
     #learn.tournir{
-        background-image: url(../Images/backgrounds/Tournir.jpg);
+        background-image: url(../Content/Images/backgrounds/Tournir.jpg);
     }
     #home_arenas.kuznecky{
-        background-image: url(../Images/backgrounds/kuznecky.jpg);
+        background-image: url(../Content/Images/backgrounds/kuznecky.jpg);
     }
     #home_arenas.dostoevskaya{
-        background-image: url(../Images/backgrounds/dostoevskaya.jpg);
+        background-image: url(../Content/Images/backgrounds/dostoevskaya.jpg);
     }
     #home_arenas.oktyabrskaya{
-        background-image: url(../Images/backgrounds/oktyabrskaya.jpg);
+        background-image: url(../Content/Images/backgrounds/oktyabrskaya.jpg);
     }
     .learn-content>.text-left,
     .learn-content>.text-center{
