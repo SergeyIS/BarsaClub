@@ -1,0 +1,292 @@
+@-moz-keyframes fadeOutAnimation {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    to {
+        opacity: 0;
+        visibility: collapse;
+    }
+}
+@-webkit-keyframes fadeOutAnimation {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    to {
+        opacity: 0;
+        visibility: collapse;
+    }
+}
+@keyframes fadeOutAnimation {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    to {
+        opacity: 0;
+        visibility: collapse;
+    }
+}
+@-moz-keyframes fadeinAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeinAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeinAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadeInApply {
+    from {
+        opacity: 0;
+        padding-top: 100px;
+        display: block;
+    }
+
+    to {
+        opacity: 1;
+        padding-top: 0px;
+        display: block;
+    }
+}
+@-webkit-keyframes fadeInApply {
+    from {
+        opacity: 0;
+        padding-top: 100px;
+        display: block;
+    }
+
+    to {
+        opacity: 1;
+        padding-top: 0px;
+        display: block;
+    }
+}
+@keyframes fadeInApply {
+    from {
+        opacity: 0;
+        padding-top: 100px;
+        display: block;
+    }
+
+    to {
+        opacity: 1;
+        padding-top: 0px;
+        display: block;
+    }
+}
+@-moz-keyframes fadeOutApply {
+    from {
+        opacity: 1;
+        padding-top: 0px;
+        display: block;
+    }
+
+    to {
+        opacity: 0;
+        padding-top: 100px;
+        display: none;
+    }
+}
+@-webkit-keyframes fadeOutApply {
+    from {
+        opacity: 1;
+        padding-top: 0px;
+        display: block;
+    }
+
+    to {
+        opacity: 0;
+        padding-top: 100px;
+        display: none;
+    }
+}
+@keyframes fadeOutApply {
+    from {
+        opacity: 1;
+        padding-top: 0px;
+        display: block;
+    }
+
+    to {
+        opacity: 0;
+        padding-top: 100px;
+        display: none;
+    }
+}
+@-moz-keyframes slideToLeft {
+    from {
+        opacity: 1;
+        left: 50%;
+    }
+
+    to {
+        opacity: 0;
+        left: -50%;
+    }
+}
+@-webkit-keyframes slideToLeft {
+    from {
+        opacity: 1;
+        left: 50%;
+    }
+
+    to {
+        opacity: 0;
+        left: -50%;
+    }
+}
+@keyframes slideToLeft {
+    from {
+        opacity: 1;
+        left: 50%;
+    }
+
+    to {
+        opacity: 0;
+        left: -50%;
+    }
+}
+@-moz-keyframes slideToRight {
+    from {
+        opacity: 1;
+        left: 50%;
+    }
+
+    to {
+        opacity: 0;
+        left: 150%;
+    }
+}
+@-webkit-keyframes slideToRight {
+    from {
+        opacity: 1;
+        left: 50%;
+    }
+
+    to {
+        opacity: 0;
+        left: 150%;
+    }
+}
+@keyframes slideToRight {
+    from {
+        opacity: 1;
+        left: 50%;
+    }
+
+    to {
+        opacity: 0;
+        left: 150%;
+    }
+}
+@-moz-keyframes slideFromRight {
+    from {
+        opacity: 0;
+        left: 150%;
+    }
+
+    to {
+        opacity: 1;
+        left: 50%;
+    }
+}
+@-webkit-keyframes slideFromRight {
+    from {
+        opacity: 0;
+        left: 150%;
+    }
+
+    to {
+        opacity: 1;
+        left: 50%;
+    }
+}
+@keyframes slideFromRight {
+    from {
+        opacity: 0;
+        left: 150%;
+    }
+
+    to {
+        opacity: 1;
+        left: 50%;
+    }
+}
+@-moz-keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        left: -50%;
+    }
+
+    to {
+        opacity: 1;
+        left: 50%;
+    }
+}
+@-webkit-keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        left: -50%;
+    }
+
+    to {
+        opacity: 1;
+        left: 50%;
+    }
+}
+@keyframes slideFromLeft {
+    from {
+        opacity: 0;
+        left: -50%;
+    }
+
+    to {
+        opacity: 1;
+        left: 50%;
+    }
+}
+.animated{
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+.appearFromBottom{
+    animation-name: fadeInApply;
+}
+.disappearToBottom{
+    animation-name: fadeOutApply;
+}
+.slideLeft{
+    animation-name: slideToLeft;
+}
+.slideRight{
+    animation-name: slideToRight;
+}
+.slideInLeft{
+    animation-name: slideFromRight;
+}
+.slideInRight{
+    animation-name: slideFromLeft;
+}

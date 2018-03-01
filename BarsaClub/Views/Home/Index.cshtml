@@ -1,0 +1,1172 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ВК BarsA</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Alex Semenov, Bogdan Kostrov">
+    <meta name="description" content="Волейбольный клуб BarsA">
+    <!--meta name="keywords" content="Разработка, веб-дизайн, сайты, asp.net, mvc, c#, адаптивная, адаптивная верстка, верстка, специалист, программист, веб-дизайнер, веб-студия"-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/Styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/Styles/Animation.css">
+    <link rel="stylesheet" type="text/css" href="/Styles/Common.css">
+    <link rel="stylesheet" type="text/css" href="/Styles/Responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+</head>
+<body id="page-top">
+    <div class="apply-form animated" id="pay" style="display:none;">
+        <a id="back_pay" href="#" onclick="HidePayApply()"></a>
+        <form class="field-container">
+            <div class="close-container">
+                <button class="close-button" type="reset" onclick="HidePayApply()">
+                    <img src="/Content/Images/Icons/close.png">
+                </button>
+            </div>
+            <div class="field">
+                <input type="text" name="payname_field" id="payname_field" placeholder="ИМЯ...|">
+            </div>
+            <div class="field">
+                <input type="text" name="payemail" id="payemail_field" placeholder="E-MAIl...|">
+            </div>
+            <div class="field">
+                <input type="tel" name="payphone" id="payphone" placeholder="ТЕЛЕФОН...|">
+            </div>
+            <div class="submit-input">
+                <button class="button try-button submit-button" type="submit"><span>Отправить</span></button>
+            </div>
+        </form>
+    </div>
+    <div class="apply-form animated" id="apply" style="display:none;">
+        <a id="back" href="#" onclick="HideApply()"></a>
+        <form class="field-container" action="/home/trialworkout" method="post">
+            <div class="close-container">
+                <button class="close-button" type="reset" onclick="HideApply()">
+                    <img src="/Content/Images/Icons/close.png">
+                </button>
+            </div>
+            <div class="field">
+                <input type="text" name="namefield" id="name_field" placeholder="ИМЯ...|">
+            </div>
+            <div class="field">
+                <input type="text" name="email" id="email_field" placeholder="E-MAIl...|">
+            </div>
+            <div class="field">
+                <input type="tel" name="phone" id="phone" placeholder="ТЕЛЕФОН...|">
+            </div>
+            <div class="choose-field">
+                <button class="button select-button dropdown-toggle" data-toggle="dropdown">
+                    <span id="level">Уровень</span>
+                    <img src="/Content/Images/Icons/caret.png">
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="SelectLevel(1)">Начальный</a></li>
+                    <li><a href="#" onclick="SelectLevel(2)">Средний</a></li>
+                    <li><a href="#" onclick="SelectLevel(3)">Продвинутый</a></li>
+                </ul>
+
+                <select id='hidden_select' name="levelselect" required hidden>
+                    <option name='junior' value="Начальный">
+                        <div>
+                            <span>Начальный</span>
+                        </div>
+                    </option>
+                    <option name='middle' value="Средний">
+                        <div>
+                            <span>Средний</span>
+                        </div>
+                    </option>
+                    <option name='senior' value="Продвинутый">
+                        <div>
+                            <span>Продвинутый</span>
+                        </div>
+                    </option>
+                </select>
+
+            </div>
+            <div class="date-input">
+                <input id="date-set" name='datefield' readonly="readonly" type="text" class="button date-button" onclick="OpenCalendar()" value="дата">
+            </div>
+            <div class="submit-input">
+                <button class="button try-button submit-button" type="submit"><span>Отправить</span></button>
+            </div>
+        </form>
+    </div>
+    <div class="calendar" id="calendar" style="display: none;">
+        <div id="calendar_container" class="calendar-container animated">
+            <div class="arrow arrow-left">
+                <button onclick="PreviousWeek()">
+                    <img src="/Content/Images/Icons/arrow-left.png">
+                </button>
+            </div>
+            <div class="arrow arrow-right">
+                <button onclick="NextWeek()">
+                    <img src="/Content/Images/Icons/arrow-right.png">
+                </button>
+            </div>
+            <div class="close-container">
+                <button class="close-button" onclick="HideCalendar()">
+                    <img src="/Content/Images/Icons/close.png">
+                </button>
+            </div>
+            <div class="container-fluid desktop">
+                <div class="row">
+                    <div class="col col-190"></div>
+                    <div class="col col-140">
+                        <p class="date"></p>
+                        <p class="day">Пн</p>
+                    </div>
+                    <div class="col col-140">
+                        <p class="date"></p>
+                        <p class="day">Вт</p>
+                    </div>
+                    <div class="col col-140">
+                        <p class="date"></p>
+                        <p class="day">Ср</p>
+                    </div>
+                    <div class="col col-140">
+                        <p class="date"></p>
+                        <p class="day">Чт</p>
+                    </div>
+                    <div class="col col-140">
+                        <p class="date"></p>
+                        <p class="day">Пт</p>
+                    </div>
+                    <div class="col col-140">
+                        <p class="date"></p>
+                        <p class="day">Сб</p>
+                    </div>
+                    <div class="col col-140">
+                        <p class="date"></p>
+                        <p class="day">Вск</p>
+                    </div>
+                </div>
+                <div class="row events" id="line_1">
+                    <div class="col col-190">
+                        <span>Достоевская</span>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='0' data-metroId='1'>
+                                <button onclick="SelectDate(0,1,'',0)" id="0-1-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='1' data-metroId='1'>
+                                <button onclick="SelectDate(1,1,'',0)" id="1-1-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='2' data-metroId='1'>
+                                <button onclick="SelectDate(2,1,'',0)" id="2-1-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='3' data-metroId='1'>
+                                <button onclick="SelectDate(3,1,'',0)" id="3-1-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='4' data-metroId='1'>
+                                <button onclick="SelectDate(4,1,'',0)" id="4-1-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='5' data-metroId='1'>
+                                <button onclick="SelectDate(5,1,'12:00-14:00',0)" id="5-1-0">12:00-14:00</button>
+                                <button onclick="SelectDate(5,1,'15:00-17:00',1)" id="5-1-1">15:00-17:00</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='6' data-metroId='1'>
+                                <button onclick="SelectDate(6,1,'12:00-14:00',0)" id="6-1-0">12:00-14:00</button>
+                                <button onclick="SelectDate(6,1,'12:00-14:00',1)" id="6-1-1">15:00-17:00</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row events" id="line_2">
+                    <div class="col col-190">
+                        <span>Кузнеций мост</span>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='0' data-metroId='2'>
+                                <button onclick="SelectDate(0,2,'',0)" id="0-2-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='1' data-metroId='2'>
+                                <button onclick="SelectDate(1,2,'',0)" id="1-2-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='2' data-metroId='2'>
+                                <button onclick="SelectDate(2,2,'20:00-22:00',0)" id="2-2-0">20:00-22:00</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='3' data-metroId='2'>
+                                <button onclick="SelectDate(3,2,'',0)" id="3-2-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='4' data-metroId='2'>
+                                <button onclick="SelectDate(4,2,'',0)" id="4-2-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='5' data-metroId='2'>
+                                <button onclick="SelectDate(5,2,'20:00-22:00',0)" id="5-2-0">20:00-22:00</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='6' data-metroId='2'>
+                                <button onclick="SelectDate(6,2,'11:00-13:00',0)" id="6-2-0">11:00-13:00</button>
+                                <button onclick="SelectDate(6,2,'14:00-16:00',1)" id="6-2-1">14:00-16:00</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row events" id="line_3">
+                    <div class="col col-190">
+                        <span>Октябрьская</span>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='0' data-metroId='3'>
+                                <button onclick="SelectDate(0,3,'',0)" id="0-3-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='1' data-metroId='3'>
+                                <button onclick="SelectDate(1,3,'20:00-22:00',0)" id="1-3-0">20:00-22:00</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='2' data-metroId='3'>
+                                <button onclick="SelectDate(2,3,'',0)" id="2-3-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='3' data-metroId='3'>
+                                <button onclick="SelectDate(3,3,'20:00-22:00',0)" id="3-3-0">20:00-22:00</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='4' data-metroId='3'>
+                                <button onclick="SelectDate(4,3,'',0)" id="4-3-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='5' data-metroId='3'>
+                                <button onclick="SelectDate(5,3,'',0)" id="5-3-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-140">
+                        <div>
+                            <div class="time-container" data-day='6' data-metroId='3'>
+                                <button onclick="SelectDate(6,3,'',0)" id="6-3-0"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mobile">
+                <div class="row week-days">
+                    <div class="col col-140">
+                        <button class="active">
+                            <p class="date"></p>
+                            <p class="day">Пн</p>
+                        </button>
+                    </div>
+                    <div class="col col-140">
+                        <button>
+                            <p class="date"></p>
+                            <p class="day">Вт</p>
+                        </button>
+                    </div>
+                    <div class="col col-140">
+                        <button>
+                            <p class="date"></p>
+                            <p class="day">Ср</p>
+                        </button>
+                    </div>
+                    <div class="col col-140">
+                        <button>
+                            <p class="date"></p>
+                            <p class="day">Чт</p>
+                        </button>
+                    </div>
+                    <div class="col col-140">
+                        <button>
+                            <p class="date"></p>
+                            <p class="day">Пт</p>
+                        </button>
+                    </div>
+                    <div class="col col-140">
+                        <button>
+                            <p class="date"></p>
+                            <p class="day">Сб</p>
+                        </button>
+                    </div>
+                    <div class="col col-140">
+                        <button>
+                            <p class="date"></p>
+                            <p class="day">Вск</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-190">
+                        <div class="container-fluid">
+                            <div class="row stations">
+                                <div class="one-station">
+                                    <span>Достоевская</span>
+                                </div>
+                            </div>
+                            <div class="row stations">
+                                <div class="one-station">
+                                    <span>Кузнецкий мост</span>
+                                </div>
+                            </div>
+                            <div class="row stations">
+                                <div class="one-station">
+                                    <span>Октябрьская</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-rest">
+                        <div class="container-fluid">
+                            <div class="row events" id="line_mobile_1">
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='0' data-metroId='1'>
+                                            <button onclick="SelectDate(0,1,'',0)" id="m0-1-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='1' data-metroId='1'>
+                                            <button onclick="SelectDate(1,1,'',0)" id="m1-1-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='2' data-metroId='1'>
+                                            <button onclick="SelectDate(2,1,'',0)" id="m2-1-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='3' data-metroId='1'>
+                                            <button onclick="SelectDate(3,1,'',0)" id="m3-1-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='4' data-metroId='1'>
+                                            <button onclick="SelectDate(4,1,'',0)" id="m4-1-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='5' data-metroId='1'>
+                                            <button onclick="SelectDate(5,1,'12:00-14:00',0)" id="m5-1-0">12:00-14:00</button>
+                                            <button onclick="SelectDate(5,1,'15:00-17:00',1)" id="m5-1-1">15:00-17:00</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='6' data-metroId='1'>
+                                            <button onclick="SelectDate(6,1,'12:00-14:00',0)" id="m6-1-0">12:00-14:00</button>
+                                            <button onclick="SelectDate(6,1,'12:00-14:00',1)" id="m6-1-1">15:00-17:00</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row events" id="line_mobile_2">
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='0' data-metroId='2'>
+                                            <button onclick="SelectDate(0,2,'',0)" id="m0-2-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='1' data-metroId='2'>
+                                            <button onclick="SelectDate(1,2,'',0)" id="m1-2-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='2' data-metroId='2'>
+                                            <button onclick="SelectDate(2,2,'20:00-22:00',0)" id="m2-2-0">20:00-22:00</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='3' data-metroId='2'>
+                                            <button onclick="SelectDate(3,2,'',0)" id="m3-2-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='4' data-metroId='2'>
+                                            <button onclick="SelectDate(4,2,'',0)" id="m4-2-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='5' data-metroId='2'>
+                                            <button onclick="SelectDate(5,2,'20:00-22:00',0)" id="m5-2-0">20:00-22:00</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='6' data-metroId='2'>
+                                            <button onclick="SelectDate(6,2,'11:00-13:00',0)" id="m6-2-0">11:00-13:00</button>
+                                            <button onclick="SelectDate(6,2,'14:00-16:00',1)" id="m6-2-1">14:00-16:00</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row events" id="line_mobile_3">
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='0' data-metroId='3'>
+                                            <button onclick="SelectDate(0,3,'',0)" id="m0-3-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='1' data-metroId='3'>
+                                            <button onclick="SelectDate(1,3,'20:00-22:00',0)" id="m1-3-0">20:00-22:00</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='2' data-metroId='3'>
+                                            <button onclick="SelectDate(2,3,'',0)" id="m2-3-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='3' data-metroId='3'>
+                                            <button onclick="SelectDate(3,3,'20:00-22:00',0)" id="m3-3-0">20:00-22:00</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='4' data-metroId='3'>
+                                            <button onclick="SelectDate(4,3,'',0)" id="m4-3-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='5' data-metroId='3'>
+                                            <button onclick="SelectDate(5,3,'',0)" id="m5-3-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col col-140">
+                                    <div>
+                                        <div class="time-container" data-day='6' data-metroId='3'>
+                                            <button onclick="SelectDate(6,3,'',0)" id="m6-3-0"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- .row.events -->
+                        </div>
+                        <!-- .container-fluid -->
+                    </div>
+                    <!-- col.col-rest -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header col-md-3 col-sm-2 col-xs-12">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <img src="/Content/Images/Icons/small_logo_small8.png">
+                    <span>BARSA</span>
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-7 col-xs-12 text-center head-titles">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-center">
+                        <li><a class="page-scroll active" href="#page-top">Главная</a></li>
+                        <li><a class="page-scroll" href="#learn">Обучение</a></li>
+                        <li><a class="page-scroll" href="#trainers">Тренеры</a></li>
+                        <li><a class="page-scroll" href="#home_arenas">Залы</a></li>
+                        <li><a class="page-scroll" href="#about">О нас</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3 col-xs-12 head-number">
+                <a href="tel:+79266807732">+7 (926) 680 77 32</a>
+            </div>
+        </div>
+    </nav>
+    <div class="parallax" id="body-container">
+        <header class="parallax_group" id="page-top">
+            <div class="parallax_layer parallax_layer-near">
+                <img class="ball2" src="/Content/Images/balls/Ball_noShadow.png" alt="" />
+            </div>
+            <div class="parallax_layer parallax_layer-fore half_layer" id="foreground_ball">
+                <img class="ball4" src="/Content/Images/balls/ball4_noShadow.png" alt="" />
+            </div>
+            <div class="parallax_layer parallax_layer-far">
+                <img class="background-image" src="/Content/Images/backgrounds/zal.jpg" alt="" />
+            </div>
+            <div class="parallax_layer parallax_layer-back">
+                <img class="ball3" src="/Content/Images/balls/ball3_noShadow.png" alt="" />
+            </div>
+            <div class="parallax_layer parallax_layer-base sub-header">
+                <div class="container-fluid">
+                    <div class="row text-center">
+                        <div class="text-center">
+                            <img class="logo-image" src="/Content/Images/Logos/RichLogo.png" alt="" />
+                        </div>
+                        <div class="text-center button-container">
+                            <button class="button try-button">
+                                <span>Пробная тренировка ></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+                        <div class="parallax_layer parallax_layer-base">
+                            <div class="text-center button-container">
+                                <button class="button" onclick="ShowApply()">
+                                    <span>Пробная тренировка ></span>
+                                </button>
+                            </div>
+                        </div>
+            -->
+        </header>
+        <section id="learn" class="parallax_group">
+            <div class="container-fluid" id="more-container">
+                <div class="row top-align">
+                    <div class="col-md-2 col-sm-4 col-xs-12 text-left">
+                        <h1 class="heading"><span>ОБУЧЕНИЕ</span></h1>
+                    </div>
+                    <div class="col-md-10 col-sm-8 col-xs-12 text-right">
+                        <div class="container-headings">
+                            <div class="choose-heading">
+                                <button class="choose-button" id="classic-button" onclick="ChooseLearn('classic')">
+                                    <img src="/Content/Images/Icons/Classic_volley.png">
+                                    <span>Классический волейбол</span>
+                                </button>
+                            </div>
+                            <div class="choose-heading">
+                                <button class="choose-button" id="beach-button" onclick="ChooseLearn('beach')">
+                                    <img src="/Content/Images/Icons/beach-voley.png">
+                                    <span>Пляжный волейбол</span>
+                                </button>
+                            </div>
+                            <div class="choose-heading">
+                                <button class="choose-button" id="tournir-button" onclick="ChooseLearn('tournir')">
+                                    <img src="/Content/Images/Icons/tournir.png">
+                                    <span>Турниры</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row learn-content content-classic">
+                    <div class="col-md-7 col-md-offset-5 text-left">
+                        <p>Волейбольный клуб BarsA проводит <strong>высокоэффективные тренировки</strong> по классическому волейболу, включающие в себя всестороннее развитие игрока.</p>
+                        <p><strong>Миссия клуба</strong> - достичь высокой производительности спортсменов, обучить и реализовать их спортивный потенциал.</p>
+                        <p>Наши тренеры найдут <strong>индивидуальный подход</strong> к каждому волейболисту, составят <strong>персональный план тренировок.</strong></p>
+                        <p>В составе ВК BarsA 4 женские и 2 мужские команды от начального до продвинутого уровня. Наши команды успешно выступают в турнирах, занимая призовые места.</p>
+                        <br>
+                        <p class="text-small">Будем рады видеть Вас в клубе BarsA!</p>
+                        <p class="text-small">Вкладывайте силы и получайте еще больше!</p>
+
+                    </div>
+                    <div class="col-md-7 col-md-offset-5 text-center">
+                        <button class="button" onclick="OpenCalendar()">
+                            <span>Календарь тренировок</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row learn-content content-beach">
+                    <div class="col-md-7 col-md-offset-5 text-left">
+                        <p>Секция пляжного волейбола <strong>начинает свою работу с апреля.</strong></p>
+                        <br>
+                        <p>Следите за новостями!</p>
+                    </div>
+                    <div class="col-md-7 col-md-offset-5 text-center">
+                        <button class="button" disabled="true">
+                            <span>Календарь тренировок</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row learn-content content-tournir">
+                    <div class="col-md-7 col-md-offset-5 text-left">
+                        <p>Волейбольный клую BarsA ежегодно организовывает <strong>6 турниров</strong>, среди которых летняя волейбольная лига по парковому волейболу <strong>на лучших площадках Москвы</strong>, турниры по пляжному волейболу, корпоративные.</p>
+                    </div>
+                    <div class="col-md-7 col-md-offset-5 text-center">
+                        <button class="button" disabled="true">
+                            <span>Календарь турниров</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="home_arenas" class="parallax_group">
+            <div class="container-fluid" id="more-container">
+                <div class="row top-align">
+                    <div class="col-md-4 col-sm-7 col-xs-12 text-left">
+                        <h1 class="heading"><span>ДОМАШНИЕ АРЕНЫ</span></h1>
+                    </div>
+                    <div class="col-md-8 col-sm-5 col-xs-12 text-right">
+                        <div class="container-headings">
+                            <div class="choose-heading">
+                                <button class="choose-button metro-button" id="kuznecky-button" onclick="ChooseArena('kuznecky')">
+                                    <img src="/Content/Images/Icons/Metro_small8.png">
+                                    <span>Кузнецкий мост</span>
+                                </button>
+                            </div>
+                            <div class="choose-heading">
+                                <button class="choose-button metro-button" id="dostoevskaya-button" onclick="ChooseArena('dostoevskaya')">
+                                    <img src="/Content/Images/Icons/Metro_small8.png">
+                                    <span>Достоевская</span>
+                                </button>
+                            </div>
+                            <div class="choose-heading">
+                                <button class="choose-button metro-button" id="oktyabrskaya-button" onclick="ChooseArena('oktyabrskaya')">
+                                    <img src="/Content/Images/Icons/Metro_small8.png">
+                                    <span>Октябрьская</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row learn-content arena-content content-kuznecky">
+                    <div class="col-md-7 col-md-offset-5 text-left">
+                        <div class="container-fluid arena-description">
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Метро:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Кузнецкий мост</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Покрытие:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Паркет</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Раздевалки:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Есть</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Душевые:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Есть</span>
+                                </div>
+                            </div>
+                            <div class="row button-row">
+                                <div class="col-xs-12">
+                                    <button class="button button-white" onclick="SelectDate(2,2,'20:00-22:00',0)">
+                                        <span><strong>Среда</strong> 20:00 - 22:00</span>
+                                    </button>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button class="button button-white" onclick="SelectDate(5,2,'20:00-22:00',0)">
+                                        <span><strong>Суббота</strong> 20:00 - 22:00</span>
+                                    </button>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button class="button button-white" onclick="SelectDate(6,2,'11:00-13:00',0)">
+                                        <span><strong>Воскресенье</strong> 11:00 - 13:00</span>
+                                    </button>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button class="button button-white" onclick="SelectDate(6,2,'14:00-16:00',1)">
+                                        <span><strong>Воскресенье</strong> 15:00 - 17:00</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row learn-content arena-content content-dostoevskaya">
+                    <div class="col-md-7 col-md-offset-5 text-left">
+                        <div class="container-fluid arena-description">
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Метро:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Достоевская</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Покрытие:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Паркет</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Раздевалки:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Есть</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Душевые:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Есть</span>
+                                </div>
+                            </div>
+                            <div class="row button-row">
+                                <div class="col-xs-12">
+                                    <button class="button button-white" onclick="SelectDate(5,1,'12:00-14:00',0)">
+                                        <span><strong>Суббота</strong> 12:00 - 14:00</span>
+                                    </button>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button class="button button-white" onclick="SelectDate(5,1,'15:00-17:00',1)">
+                                        <span><strong>Суббота</strong> 15:00 - 17:00</span>
+                                    </button>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button class="button button-white" onclick="SelectDate(6,1,'12:00-14:00',0)">
+                                        <span><strong>Воскресенье</strong> 12:00 - 14:00</span>
+                                    </button>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button class="button button-white" onclick="SelectDate(6,1,'12:00-14:00',1)">
+                                        <span><strong>Воскресенье</strong> 15:00 - 17:00</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row learn-content arena-content content-oktyabrskaya">
+                    <div class="col-md-7 col-md-offset-5 text-left">
+                        <div class="container-fluid arena-description">
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Метро:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Октябрьская</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Покрытие:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Паркет</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Раздевалки:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Есть</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5 text-left">
+                                    <span><strong>Душевые:</strong></span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <span>Есть</span>
+                                </div>
+                            </div>
+                            <div class="row button-row">
+                                <div class="col-xs-12">
+                                    <button class="button button-white" onclick="SelectDate(1,3,'20:00-22:00',0)">
+                                        <span><strong>Вторник</strong> 20:00 - 22:00</span>
+                                    </button>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button class="button button-white" onclick="SelectDate(3,3,'20:00-22:00',0)">
+                                        <span><strong>Четверг</strong> 20:00 - 22:00</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="trainers" class="parallax_group">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-7 col-xs-12 text-left">
+                        <h1 class="heading"><span>Тренеры</span></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 trainer">
+                        <div class="trainer-image">
+                            <img src="/Content/Images/people/VladFullHD.png">
+                        </div>
+                        <div class="trainer-stagh text-center">
+                            <span><strong>Тренерский стаж: 7 лет</strong></span>
+                        </div>
+                        <div class="trainer-description text-center">
+                            <p>Тренер сборной ЦАО, студенческих сборных МИСиС</p>
+                            <p>КМС по классическому, участник чемпионатов России в 1 лиге, высшей лиге.</p>
+                            <p>Многократный победитель различных Московских и Российских турниров. Организатор московских турниров ЦАО.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 trainer">
+                        <div class="trainer-image">
+                            <img src="/Content/Images/people/MarinaFullHD.png">
+                        </div>
+                        <div class="trainer-stagh text-center">
+                            <span><strong>Тренерский стаж: 2 года</strong></span>
+                        </div>
+                        <div class="trainer-description text-center">
+                            <p>Тренер в ДЮСШ и</p>
+                            <p>в пляжном волейболе.</p>
+                            <p>КМС по пляжному волейболу.</p>
+                            <p>Призер этапа чемпионата России.</p>
+                            <p>Абсолютная чемпионка Поволжья. Многократный победитель коммерческих турниров.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 trainer">
+                        <div class="trainer-image">
+                            <img src="/Content/Images/people/VladFullHD.png">
+                        </div>
+                        <div class="trainer-stagh text-center">
+                            <span><strong>Тренерский стаж: 10 лет</strong></span>
+                        </div>
+                        <div class="trainer-description text-center">
+                            <p>Тренер в ДЮСШ</p>
+                            <p>КМС по классическому волейболу, участник чемпионатов России в 1 лиге, высшей лиге.</p>
+                            <p>Многократный победитель коммерческих турниров</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="parallax_group">
+            <div class="parallax_layer parallax_layer-center">
+                <div class="center-ball">
+                    <img src="/Content/Images/Balls/ballCenter.png">
+                </div>
+            </div>
+            <div class="container_fluid parallax_layer parallax_layer-base about-container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-7 col-xs-12 text-left">
+                        <h1 class="heading"><span>О клубе</span></h1>
+                    </div>
+                </div>
+                <div class="row about-description">
+                    <div class="col-xs-12">
+                        <p>Волейбольный клуб "BarsA" <strong>основан в 2016 году.</strong></p>
+                        <br>
+                    </div>
+                    <div class="col-xs-12">
+                        <p><strong>Миссия клуба</strong> - достичь высокой производительности спортсменов, обучить и реализовать их спортивный потенциал.</p>
+                        <br>
+                    </div>
+                    <div class="col-md-11 col-xs-12">
+                        <p>В ВК "BarsA" работают <strong>профессиональные тренеры</strong>, которые по-настоящему любят свое дело.</p>
+                        <p>Наши <strong>тренировки проходят исключительно на высоком уровне</strong>, а <strong>турниры</strong> служат объединению спортсменов, популяризации здорового образа жизни, воспитанию здорового поколения и развитию массового спорта.</p>
+                        <br>
+                    </div>
+                    <div class="col-md-9 col-xs-12">
+                        <p>Для Вас созданы все необходимые условия: <strong>лучшие залы в центре Москвы</strong> в шаговой доступности от метро, паркетное покрытие, хорошее освещение, профессиональный спортинвентарь.</p>
+                        <br>
+                    </div>
+                    <div class="col-md-8 col-xs-12">
+                        <p>С нами каждый спортсмен, вне зависимоси от своего уровня, сможет повысить навыки, значительно улучшить физическую форму и <strong>достичь своих спортивных целей.</strong></p>
+                        <br>
+                    </div>
+                    <div class="col-md-7 col-xs-12">
+                        <p>В состав клуба уже входят <strong>4 женских и 2 мужских команд</strong>, которые успешно выстпуают на соревнованиях, занимая <strong>призовые места!</strong></p>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <br>
+                        <p><strong>Будем рады видеть Вас в новых командах ВК "BarsA"!</strong></p>
+                    </div>
+                    <div class="col-md-6 col-xs-12 text-center">
+                        <button class="button try-button">
+                            <span>Пробная тренировка ></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="abonements" class="parallax_group">
+            <div class="container_fluid">
+                <div class="row top-align">
+                    <div class="col-md-2 col-sm-6 col-xs-12 text-left">
+                        <h1 class="heading"><span>Абонементы</span></h1>
+                    </div>
+                    <div class="col-md-10 col-sm-6 col-xs-12 text-right">
+                        <div class="container-headings">
+                            <div class="choose-heading">
+                                <button class="choose-button">
+                                    <img src="/Content/Images/Icons/Classic_volley.png">
+                                    <span>Классический волейбол</span>
+                                </button>
+                            </div>
+                            <div class="choose-heading">
+                                <button class="choose-button">
+                                    <img src="/Content/Images/Icons/beach-voley.png">
+                                    <span>Пляжный волейбол</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row abonements-row">
+                    <div class="abonements-container">
+                        <div class="col-abonem text-left">
+                            <div class="abonement-item">
+                                <div class="amount amount-1 text-center">
+                                    <h1 class="heading"><span>4</span></h1>
+                                </div>
+                                <div class="text-center margin-top5">
+                                    <span><strong>ТРЕНИРОВКИ/МЕСЯЦ</strong></span>
+                                </div>
+                                <div class="old-price text-center">
+                                    <span><strong>3000 Р</strong></span>
+                                </div>
+                                <div class="new-price text-center">
+                                    <span><strong>2500 Р</strong></span>
+                                </div>
+                                <div class="text-center">
+                                    <button class="button buy-button" onclick="ShowPayApply()">
+                                        <span>Купить ></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-abonem col-abonem-2 text-right">
+                            <div class="abonement-item">
+                                <div class="amount amount-2 text-center">
+                                    <h1 class="heading"><span>8</span></h1>
+                                </div>
+                                <div class="text-center margin-top5">
+                                    <span><strong>ТРЕНИРОВОК/МЕСЯЦ</strong></span>
+                                </div>
+                                <div class="old-price text-center">
+                                    <span><strong>6000 Р</strong></span>
+                                </div>
+                                <div class="new-price text-center">
+                                    <span><strong>4000 Р</strong></span>
+                                </div>
+                                <div class="text-center">
+                                    <button class="button buy-button" onclick="ShowPayApply()">
+                                        <span>Купить ></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contacts" class="parallax_group">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 col-sm-7 col-xs-12 text-left">
+                        <h1 class="heading"><span>Контакты</span></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 trainer">
+                        <div class="trainer-image">
+                            <img src="/Content/Images/people/VladFullHD.png">
+                        </div>
+                        <div class="trainer-stagh text-center">
+                            <span><strong>ОСНОВАТЕЛЬ</strong></span>
+                        </div>
+                        <div class="trainer-description contact-mail text-center">
+                            <a href="mailto:Volleyball-BarsA@mail.ru">Volleyball-BarsA@mail.ru</a>
+                            <a href="tel:+79264764876">
+                                <span>+7 (926) 476-48-76</span>
+                            </a>
+                        </div>
+                        <div class="contact-social">
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-4 text-right">
+                                <a href="" target="_blank">
+                                    <img src="/Content/Images/Icons/facebook_small.png">
+                                </a>
+                            </div>
+                            <div class="col-xs-2"></div>
+                            <div class="col-xs-4 text-left">
+                                <a href="" target="_blank">
+                                    <img src="/Content/Images/Icons/vk_small.png">
+                                </a>
+                            </div>
+                            <div class="col-xs-1"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 trainer">
+                        <div class="trainer-image">
+                            <img src="/Content/Images/people/RichLogo.png">
+                        </div>
+                        <div class="trainer-stagh text-center">
+                            <span><strong>ВК "BARSA"</strong></span>
+                        </div>
+                        <div class="trainer-description contact-mail text-center">
+                            <p>Москва,</p>
+                            <p>2016</p>
+                        </div>
+                        <div class="contact-social">
+                            <div class="col-xs-4 text-left">
+                                <a href="" target="_blank">
+                                    <img src="/Content/Images/Icons/facebook_small.png">
+                                </a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="" target="_blank">
+                                    <img src="/Content/Images/Icons/vk_small.png">
+                                </a>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <a href="" target="_blank">
+                                    <img src="/Content/Images/Icons/instagram_small.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 trainer">
+                        <div class="trainer-image">
+                            <img src="/Content/Images/people/DaryaFullHD.png">
+                        </div>
+                        <div class="trainer-stagh text-center">
+                            <span><strong>МЕНЕДЖЕР</strong></span>
+                        </div>
+                        <div class="trainer-description contact-mail text-center">
+                            <a href="mailto:Rainex@yandex.ru">Rainerx@yandex.ru</a>
+                            <a href="tel:+79266807732">
+                                <span>+7 (926) 680-77-32</span>
+                            </a>
+                        </div>
+                        <div class="contact-social">
+                            <div class="col-xs-4 text-left">
+                                <a href="" target="_blank">
+                                    <img src="/Content/Images/Icons/facebook_small.png">
+                                </a>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <a href="" target="_blank">
+                                    <img src="/Content/Images/Icons/vk_small.png">
+                                </a>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <a href="" target="_blank">
+                                    <img src="/Content/Images/Icons/instagram_small.png">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center footer-button-container">
+                    <button class="button try-button">
+                        <span>Пробная тренировка ></span>
+                    </button>
+                </div>
+                <div class="row footer-brand">
+                    <a class="navbar-brand page-scroll" href="#page-top">
+                        <img src="/Content/Images/Icons/small_logo_small8.png">
+                        <span>BARSA</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="/Scripts/jquery.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/jquery.easing.min.js"></script>
+    <script src="/Plugins/jquery.maskedinput.min.js"></script>
+    <script src="/Scripts/script.js"></script>
+</body>
+</html>
