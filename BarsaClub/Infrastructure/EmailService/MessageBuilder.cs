@@ -44,7 +44,7 @@ namespace BarsaClub.Infrastructure.Services.Email
             return emailMessage;
         }
 
-        public static Object GetMessageTemplate(String name)
+        public static StreamReader GetMessageTemplate(String name)
         {
             if (!MemoryCache.Default.Any(c => c.Key.Equals(name)))
                 throw new FileNotFoundException("email template is not found");
@@ -53,13 +53,13 @@ namespace BarsaClub.Infrastructure.Services.Email
             if (citem == null || citem.Value == null)
                 throw new FileNotFoundException("email template is not found");
 
-            return citem.Value;
+            return new StreamReader((String)citem.Value);
         }
 
-        public static void SetMessageTemplate(String name, Object value)
+        public static void SetMessageTemplate(String name, String path)
         {
             CacheItemPolicy policy = new CacheItemPolicy() { Priority = CacheItemPriority.NotRemovable };
-            MemoryCache.Default.Set(new CacheItem(name, value), policy);
+            MemoryCache.Default.Set(new CacheItem(name, path), policy);
         }
     }
 }

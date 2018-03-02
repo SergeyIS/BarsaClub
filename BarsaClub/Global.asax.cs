@@ -26,8 +26,8 @@ namespace BarsaClub
                 var paymentPath = ConfigurationManager.AppSettings.Get("paymentTmplPath");
                 var trialWorkoutPath = ConfigurationManager.AppSettings.Get("trialWorkoutTmplPath");
 
-                MessageBuilder.SetMessageTemplate("payment", new StreamReader(paymentPath));
-                MessageBuilder.SetMessageTemplate("trialworkout", new StreamReader(trialWorkoutPath));
+                MessageBuilder.SetMessageTemplate("payment", paymentPath);
+                MessageBuilder.SetMessageTemplate("trialworkout", trialWorkoutPath);
 
                 //robokassa configuration
                 var robokassaConfig = (RobokassaConfiguration)ConfigurationManager.GetSection("robokassaConfiguration");

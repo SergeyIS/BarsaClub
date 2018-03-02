@@ -2,9 +2,9 @@
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
-using BarsaClub.Infrastructure.Services.Payment;
 using BarsaClub.Models;
 using BarsaClub.Infrastructure.Services.Email;
+using BarsaClub.Infrastructure.Services.Payment;
 using BarsaClub.Infrastructure.Services.Email.Models;
 
 namespace BarsaClub.Controllers
@@ -28,20 +28,28 @@ namespace BarsaClub.Controllers
             //sending email notification
             try
             {
-                var messageTemplateFile = (StreamReader)MessageBuilder.GetMessageTemplate("trialworkout");
-                var messageContext = new MessageBuilderContext()
+                using (var messageTemplateFile = MessageBuilder.GetMessageTemplate("trialworkout"))
                 {
-                    TemplateFile = messageTemplateFile,
-                    Title = "Пробная тренировка",
-                    Name = model.NameField,
-                    Email = model.Email,
-                    Phone = model.Phone,
-                    Description = $"Дата: {model.DateField}, Уровень: {model.LevelSelect}"
-                };
-                var messageBuilder = new MessageBuilder(messageContext);
+                    try
+                    {
+                        var messageContext = new MessageBuilderContext()
+                        {
+                            TemplateFile = messageTemplateFile,
+                            Title = "Пробная тренировка",
+                            Name = model.NameField,
+                            Email = model.Email,
+                            Phone = model.Phone,
+                            Description = $"Дата: {model.DateField}, Уровень: {model.LevelSelect}"
+                        };
+                        var messageBuilder = new MessageBuilder(messageContext);
 
-                EmailSender.SendMessageAsync(messageBuilder.GetMessage());
-
+                        EmailSender.SendMessageAsync(messageBuilder.GetMessage());
+                    }
+                    catch
+                    {
+                        //todo: write log
+                    }
+                }
             }
             catch (FileNotFoundException e)
             {

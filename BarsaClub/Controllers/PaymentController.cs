@@ -1,9 +1,9 @@
-﻿using BarsaClub.Infrastructure.Services.Email;
-using BarsaClub.Infrastructure.Services.Email.Models;
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
+using BarsaClub.Infrastructure.Services.Email;
+using BarsaClub.Infrastructure.Services.Email.Models;
 
 namespace BarsaClub.Controllers
 {
@@ -27,20 +27,28 @@ namespace BarsaClub.Controllers
             //sending email notification
             try
             {
-                var messageTemplateFile = (StreamReader)MessageBuilder.GetMessageTemplate("payment");
-                var messageContext = new MessageBuilderContext()
+                using (var messageTemplateFile = MessageBuilder.GetMessageTemplate("payment"))
                 {
-                    TemplateFile = messageTemplateFile,
-                    Title = "Оплата абонемента",
-                    Name = name,
-                    Email = email,
-                    Phone = phone,
-                    Description = $"Стоимость абонемента: {sum}р."
-                };
-                var messageBuilder = new MessageBuilder(messageContext);
+                    try
+                    {
+                        var messageContext = new MessageBuilderContext()
+                        {
+                            TemplateFile = messageTemplateFile,
+                            Title = "Оплата абонемента",
+                            Name = name,
+                            Email = email,
+                            Phone = phone,
+                            Description = $"Стоимость абонемента: {sum}р."
+                        };
+                        var messageBuilder = new MessageBuilder(messageContext);
 
-                EmailSender.SendMessageAsync(messageBuilder.GetMessage());
-
+                        EmailSender.SendMessageAsync(messageBuilder.GetMessage());
+                    }
+                    catch
+                    {
+                        //todo: write log
+                    }
+                }
             }
             catch (FileNotFoundException e)
             {
