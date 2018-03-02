@@ -1,5 +1,8 @@
-﻿using System;
-using System.Web;
+﻿using BarsaClub.Infrastructure.Services.Email;
+using BarsaClub.Infrastructure.Services.Email.Models;
+using System;
+using System.IO;
+using System.Net;
 using System.Web.Mvc;
 
 namespace BarsaClub.Controllers
@@ -14,10 +17,39 @@ namespace BarsaClub.Controllers
             var email = HttpContext.Request.QueryString.Get("Shp_email");
             var name = HttpContext.Request.QueryString.Get("Shp_name");
             var phone = HttpContext.Request.QueryString.Get("Shp_phone");
-            
+
+            if(String.IsNullOrEmpty(sum) || String.IsNullOrEmpty(email) || String.IsNullOrEmpty(name) || 
+                String.IsNullOrEmpty(phone))
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
             //todo: check hash
 
+            //sending email notification
+            try
+            {
+                var messageTemplateFile = (StreamReader)MessageBuilder.GetMessageTemplate("payment");
+                var messageContext = new MessageBuilderContext()
+                {
+                    TemplateFile = messageTemplateFile,
+                    Title = "Оплата абонемента",
+                    Name = name,
+                    Email = email,
+                    Phone = phone,
+                    Description = $"Стоимость абонемента: {sum}р."
+                };
+                var messageBuilder = new MessageBuilder(messageContext);
 
+                EmailSender.SendMessageAsync(messageBuilder.GetMessage());
+
+            }
+            catch (FileNotFoundException e)
+            {
+                //todo: write log
+            }
+            catch (Exception e)
+            {
+               //todo: write log
+            }
 
             return View();
         }
@@ -27,6 +59,5 @@ namespace BarsaClub.Controllers
         {
             return View();
         }
-
     }
 }
