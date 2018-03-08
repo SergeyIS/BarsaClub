@@ -307,7 +307,6 @@ h1 {
 
 .close-container {
     position: absolute;
-    ;
     top: -37px;
     left: 37px;
     width: 100%;
@@ -326,7 +325,8 @@ h1 {
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     border-radius: 25px;
-    width: 356px;
+    width: calc(100% - 80px);
+    max-width: 356px;
     padding: 25px;
     box-shadow: -5px 5px 2em rgba(0,0,0,0.7);
 }
