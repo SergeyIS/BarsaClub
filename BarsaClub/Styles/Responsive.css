@@ -1,497 +1,599 @@
 /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px) {
-
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (orientation: portrait) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) {
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (orientation: landscape) {
-      .logo-image{
-          width: 150px!important;
-      }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: landscape) {
+    .logo-image {
+        width: 150px !important;
+    }
 }
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) { 
-      
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px)
-  and (orientation: portrait) { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px)
-  and (orientation: landscape) { 
-      
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) { 
-
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (orientation: portrait) { 
-
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (orientation: landscape) { 
-
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
 }
 
 /* ----------- iPhone X ----------- */
 
 /* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px)  { 
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
 }
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (orientation: portrait) { 
-      .logo-image{
-          margin-bottom: 80px;
-      }
-      .sub-header{
-          top: 80px;
-          height: calc(100% - 80px);
-      }
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (orientation: portrait) {
+    .logo-image {
+        margin-bottom: 80px;
+    }
+
+    .sub-header {
+        top: 80px;
+        height: calc(100% - 80px);
+    }
 }
 
 /* Landscape */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 813px) 
-  and (orientation: landscape) { 
-      .sub-header{
-          top: 10px;
-          height: calc(100% - 10px);
-      }
-      .logo-image{
-          width: 200px;
-          margin-bottom: 20px;
-      }
-      .ball3{
-          top: 30%;
-          left: 65%;
-          width: 40.5px;
-      }
-      .ball4{
-          top: 60%;
-          left: 100%;
-          width: 135px;
-      }
-      .ball2{
-          top: 70%;
-          left: 69%;
-          width: 70px;
-      }
-      .button-container{
-          bottom: 100px;
-      }
+@media only screen and (min-device-width: 375px) and (max-device-width: 813px) and (orientation: landscape) {
+    .sub-header {
+        top: 10px;
+        height: calc(100% - 10px);
+    }
+
+    .logo-image {
+        width: 200px;
+        margin-bottom: 20px;
+    }
+
+    .ball3 {
+        top: 30%;
+        left: 65%;
+        width: 40.5px;
+    }
+
+    .ball4 {
+        top: 60%;
+        left: 100%;
+        width: 135px;
+    }
+
+    .ball2 {
+        top: 70%;
+        left: 69%;
+        width: 70px;
+    }
+
+    .button-container {
+        bottom: 100px;
+    }
 }
-@media (min-width: 420px){
-    .arena-content{
+
+@media (min-width: 420px) {
+    .arena-content {
         top: 250px;
     }
-    #about{
+
+    #about {
         min-height: 1000px;
     }
-    .date, .day{
+
+    .date, .day {
         font-size: 14px;
     }
 }
-@media (min-width: 768px){
-    .navbar-nav>li>a{
+
+@media (min-width: 768px) {
+    .navbar-nav > li > a {
         line-height: 30px;
     }
-    .navbar-header{
+
+    .navbar-header {
         padding-left: 5px;
         padding-right: 0px;
     }
-    .button-container{
+
+    .button-container {
         bottom: 80px;
     }
-    .parallax{
+
+    .parallax {
         margin-top: 100px;
         height: calc(100% - 100px);
     }
-    html,body{
+
+    html, body {
         font-size: 18px;
     }
-    .logo-image{
+
+    .logo-image {
         width: 300px;
         margin-bottom: 50px;
     }
-    .sub-header{
+
+    .sub-header {
         top: 70px;
         height: calc(100% - 70px);
     }
-    header{
+
+    header {
         padding-top: 30px;
     }
-    .head-number{
+
+    .head-number {
         text-align: right;
     }
-    .ball3{
+
+    .ball3 {
         margin-top: -30px;
         width: 63px;
     }
-    .ball4{
+
+    .ball4 {
         margin-top: -50px;
         width: 189px;
     }
-    .ball2{
+
+    .ball2 {
         margin-top: -50px;
         width: 108px;
     }
-    .parallax{
+
+    .parallax {
         margin-top: 50px;
         height: calc(100% - 50px);
     }
-    .learn-content{
+
+    .learn-content {
         right: 40px;
         top: 180px;
         width: calc(100% - 80px);
     }
-    .top-align div.choose-heading{
+
+    .top-align div.choose-heading {
         position: relative;
         top: 50%;
         transform: translate(0, -50%);
     }
-    #learn{
+
+    #learn {
         min-height: 700px;
     }
-    #learn, #home_arenas, #trainers, #contacts{
+
+    #learn, #home_arenas, #trainers, #contacts {
         padding: 40px 20px;
     }
-    #about{
-        background-position: left;
+
+    #about {
         min-height: 850px;
     }
-    .about-container{
-        margin: 40px;   
-    }
-    .center-ball img{
-        width: 200px;
-    }
-    #abonements{
+
+    .about-container {
+        background-position: left;
         padding: 40px;
     }
-    .abonements-row{
+
+    .center-ball img {
+        width: 200px;
+    }
+
+    #abonements {
+        height: 700px;
+        padding: 40px;
+    }
+
+    .abonements-row {
         height: 650px;
         position: relative;
     }
-    .abonements-container{
+
+    .abonements-container {
         width: 650px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    .col-abonem{
+
+    #abonements .parallax_layer-fore {
+        display: block;
+        left: unset;
+        width: calc(60% / 2);
+        top: 30%;
+    }
+
+    .col-abonem {
         width: 50%;
     }
-    .col-abonem-2 .abonement-item{
+
+    .col-abonem-2 .abonement-item {
         float: right;
         margin: unset;
     }
-    .abonement-item{
+
+    .abonement-item {
         float: left;
         margin: unset;
     }
 }
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 813px) 
-    and (orientation: landscape){
-        .sub-header{
-            top: 10px;
-            height: calc(100% - 10px);
-        }
-        .logo-image{
-            width: 230px;
-            margin-bottom: 20px;
-        }
-        .button-container{
-            bottom: 60px;
-        }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 813px) and (orientation: landscape) {
+    .sub-header {
+        top: 10px;
+        height: calc(100% - 10px);
+    }
+
+    .logo-image {
+        width: 230px;
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        bottom: 60px;
+    }
 }
-@media only screen 
-  and (min-device-height: 768px) 
-  and (max-device-height: 813px) 
-    and (orientation: portrait){
-        .logo-image{
-            width: 280px;
-        }
-        .sub-header{
-            top: 100px;
-            height: calc(100% - 100px);
-        }
+
+@media only screen and (min-device-height: 768px) and (max-device-height: 813px) and (orientation: portrait) {
+    .logo-image {
+        width: 280px;
+    }
+
+    .sub-header {
+        top: 100px;
+        height: calc(100% - 100px);
+    }
 }
-@media (min-width: 992px){
-    .nav>li>a{
+
+@media (min-width: 992px) {
+    .nav > li > a {
         padding: 10px 10px;
     }
-    .navbar-header{
+
+    .navbar-header {
         padding-left: 15px;
         padding-right: 15px;
     }
-    .choose-button img{
+
+    .choose-button img {
         margin-left: 10px;
     }
-    .logo-image{
+
+    .logo-image {
         width: 380px;
     }
-    .half_layer{
+
+    .half_layer {
         width: calc(100% / 2);
     }
-    .ball3{
+
+    .ball3 {
         top: 21%;
         left: 61%;
-        width: 67.5;
+        width: 67.5px;
         filter: blur(5px) drop-shadow(-17px 30px 30px rgba(0,51,153,0.3))
     }
-    .ball4{
+
+    .ball4 {
         top: 61%;
         left: 32%;
         left: 100%;
         width: 216px;
         filter: blur(10px) drop-shadow(-35px 60px 60px rgba(0,51,153,0.3));
     }
-    .ball2{
+
+    #abonements .ball4 {
+        left: 0%;
+        transform: translate(-50%, -50%) rotate(70deg);
+        filter: blur(10px) drop-shadow(12px 30px 30px rgba(0,51,153,0.3));
+    }
+
+    #abonements .parallax_layer-fore {
+        width: calc(70% / 2);
+    }
+
+    #abonements .choose-button {
+        position: relative;
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+
+    .ball2 {
         top: 68%;
         left: 65%;
         width: 116px;
     }
-    .learn-content{
+
+    #abonements .ball2 {
+        left: 10%;
+    }
+
+    .learn-content {
         right: 40px;
         width: 100%;
     }
-    #learn{
+
+    #learn {
         min-height: 750px;
     }
-    #learn.classic{
-        background-image: url(../Content/Images/backgrounds/Classic.jpg);
-    }
-    #learn.beach{
-        background-image: url(../Content/Images/backgrounds/Beach.jpg);
-    }
-    #learn.tournir{
-        background-image: url(../Content/Images/backgrounds/Tournir.jpg);
-    }
-    #home_arenas.kuznecky{
+
+        #learn.classic {
+            background-image: url(../Content/Images/backgrounds/Classic.jpg);
+        }
+
+        #learn.beach {
+            background-image: url(../Content/Images/backgrounds/Beach.jpg);
+        }
+
+        #learn.tournir {
+            background-image: url(../Content/Images/backgrounds/Tournir.jpg);
+        }
+
+    #home_arenas.kuznecky {
         background-image: url(../Content/Images/backgrounds/kuznecky.jpg);
     }
-    #home_arenas.dostoevskaya{
+
+    #home_arenas.dostoevskaya {
         background-image: url(../Content/Images/backgrounds/dostoevskaya.jpg);
     }
-    #home_arenas.oktyabrskaya{
+
+    #home_arenas.oktyabrskaya {
         background-image: url(../Content/Images/backgrounds/oktyabrskaya.jpg);
     }
-    .learn-content>.text-left,
-    .learn-content>.text-center{
+
+    .learn-content > .text-left,
+    .learn-content > .text-center {
         text-align: right;
     }
-    .arena-description{
+
+    .arena-description {
         margin-right: 0px;
     }
-    .trainer{
+
+    .trainer {
         padding: 10px 30px;
     }
-    .trainer-image{
+
+    .trainer-image {
         height: 400px;
     }
-    .trainer-image img{
+
+        .trainer-image img {
+            max-width: 300px;
+        }
+
+    .contact-social {
         max-width: 300px;
     }
-    .contact-social{
-        max-width: 300px;
-    }
-    .about-description .text-center{
+
+    .about-description .text-center {
         text-align: right;
         margin: unset;
     }
-    .col-190{
+
+    .col-190 {
         width: 170px;
         padding-left: 20px;
         text-align: left;
     }
-    .col-140{
+
+    .col-140 {
         width: 95px;
     }
-    .events .col-140{
+
+    .events .col-140 {
         display: block;
         width: 95px;
     }
-    .col-rest{
+
+    .col-rest {
         width: 690px;
     }
-    .calendar-container{
+
+    .calendar-container {
         width: 860px;
         max-width: 860px;
     }
-    .arrow{
+
+    .arrow {
         width: 30px;
     }
-    .arrow-left{
+
+    .arrow-left {
         left: -50px;
     }
-    .arrow-right{
+
+    .arrow-right {
         right: -50px;
     }
-    .calendar-container>.container-fluid{
+
+    .calendar-container > .container-fluid {
         display: block;
     }
-    .calendar-container>.container-fluid.mobile{
-        display: none;
-    }
-    .events .col-140 button{
+
+        .calendar-container > .container-fluid.mobile {
+            display: none;
+        }
+
+    .events .col-140 button {
         font-size: 13px;
     }
-    .date{
+
+    .date {
         line-height: 40px;
     }
-    .day{
+
+    .day {
         line-height: 30px;
     }
-    .date, .day{
+
+    .date, .day {
         font-size: 15px;
+    }
+
+    #abonements .top-align div.choose-heading {
+        float: left;
+    }
+
+    #abonements .top-align div {
+        height: 100%;
     }
 }
 
-@media (min-width: 1200px){
-    .events .col-140 button{
+@media (min-width: 1200px) {
+    #abonements .ball2 {
+        left: 14%;
+    }
+
+    #abonements .parallax_layer-fore {
+        width: calc(80% / 2);
+    }
+
+    .events .col-140 button {
         font-size: 16px;
     }
-    .arrow{
+
+    .arrow {
         width: 32px;
     }
-    .calendar-container{
+
+    .calendar-container {
         width: 1110px;
         max-width: 1110px;
     }
-    .col-190{
+
+    .col-190 {
         width: 190px;
     }
-    .col-rest{
+
+    .col-rest {
         width: 980px;
     }
+
     .col-140,
-    .events .col-140{
+    .events .col-140 {
         width: 130px;
     }
-    .nav>li>a{
+
+    .nav > li > a {
         padding: 10px 15px;
     }
-    .choose-button img{
+
+    .choose-button img {
         margin-left: 50px;
     }
-    .metro-button img{
+
+    .metro-button img {
         margin-left: 40px;
     }
-    .logo-image{
+
+    .logo-image {
         margin-bottom: 70px;
     }
-    .ball3{
+
+    .ball3 {
         width: 81px;
     }
-    .ball4{
+
+    .ball4 {
         width: 270px;
     }
-    .ball2{
+
+    .ball2 {
         width: 140px;
     }
-    .top-align div.choose-heading{
+
+    .top-align div.choose-heading {
         float: left;
     }
-    .top-align div{
+
+    .top-align div {
         height: 100%;
     }
-    .learn-content{
+
+    .learn-content {
         top: 120px;
     }
-    .arena-content{
+
+    .arena-content {
         top: 120px;
     }
-    #learn{
+
+    #learn {
         min-height: 100vh;
     }
-    #home_arenas{
+
+    #home_arenas {
         min-height: 800px;
     }
-    .trainer{
+
+    .trainer {
         padding: 10px 50px;
     }
-    .trainer-image{
+
+    .trainer-image {
         height: 420px;
     }
-    .trainer-image img{
+
+        .trainer-image img {
+            max-width: 320px;
+        }
+
+    .contact-social {
         max-width: 320px;
     }
-    .contact-social{
-        max-width: 320px;
-    }
-    .button-row{
+
+    .button-row {
         max-height: 435px;
     }
 }
 
-@media (min-width: 1600px){
-    .logo-image{
+@media (min-width: 1600px) {
+    .logo-image {
         width: 450px;
         margin-bottom: 90px;
     }
-    .ball3{
+
+    .ball3 {
         top: 15%;
         left: 64%;
     }
-    .trainer{
+
+    .trainer {
         padding: 10px 60px;
     }
-    .trainer-image{
+
+    .trainer-image {
         height: 600px;
     }
-    .trainer-image img{
-        max-width: 400px;
-    }
+
+        .trainer-image img {
+            max-width: 400px;
+        }
 }

@@ -4,7 +4,7 @@
 <head>
     <title>ВК BarsA</title>
     <meta charset="utf-8">
-    <meta name="author" content="Alex Semenov, Bogdan Kostrov">
+    <meta name="author" content="Alex Semenov, Sergey Sidorov">
     <meta name="description" content="Волейбольный клуб BarsA">
     <!--meta name="keywords" content="Разработка, веб-дизайн, сайты, asp.net, mvc, c#, адаптивная, адаптивная верстка, верстка, специалист, программист, веб-дизайнер, веб-студия"-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,49 +18,50 @@
 <body id="page-top">
     <div class="apply-form animated" id="pay" style="display:none;">
         <a id="back_pay" href="#" onclick="HidePayApply()"></a>
-        <form class="field-container" action="/home/pay" method="post">
+        <form class="field-container" action="/home/pay" method="post" id="pay_form">
             <div class="close-container">
                 <button class="close-button" type="reset" onclick="HidePayApply()">
                     <img src="/Content/Images/Icons/close.png">
                 </button>
             </div>
             <div class="field">
-                <input type="text" name="name" id="payname_field" placeholder="ИМЯ...|">
+                <input type="text" name="name" id="payname_field" placeholder="ИМЯ...|" required>
             </div>
             <div class="field">
-                <input type="text" name="email" id="payemail_field" placeholder="E-MAIl...|">
+                <input type="email" name="email" id="payemail_field" placeholder="E-MAIl...|" required>
             </div>
             <div class="field">
-                <input type="tel" name="phone" id="payphone" placeholder="ТЕЛЕФОН...|">
+                <input type="tel" name="phone" id="payphone" placeholder="ТЕЛЕФОН...|" required>
             </div>
             <div class="submit-input">
-                <button class="button try-button submit-button" type="submit"><span>Отправить</span></button>
+                <button class="button submit-button" type="submit"><span>Отправить</span></button>
             </div>
             <input type="text" name="sum" id="sum" hidden/>
         </form>
     </div>
     <div class="apply-form animated" id="apply" style="display:none;">
         <a id="back" href="#" onclick="HideApply()"></a>
-        <form class="field-container" action="/home/trialworkout" method="post">
+        <form class="field-container" action="/home/trialworkout" method="post" id="apply_form">
             <div class="close-container">
                 <button class="close-button" type="reset" onclick="HideApply()">
                     <img src="/Content/Images/Icons/close.png">
                 </button>
             </div>
             <div class="field">
-                <input type="text" name="namefield" id="name_field" placeholder="ИМЯ...|">
+                <input type="text" name="namefield" id="name_field" placeholder="ИМЯ...|" required>
             </div>
             <div class="field">
-                <input type="text" name="email" id="email_field" placeholder="E-MAIl...|">
+                <input type="email" name="email" id="email_field" placeholder="E-MAIl...|" required>
             </div>
             <div class="field">
-                <input type="tel" name="phone" id="phone" placeholder="ТЕЛЕФОН...|">
+                <input type="tel" name="phone" id="phone" placeholder="ТЕЛЕФОН...|" required>
             </div>
             <div class="choose-field">
-                <button class="button select-button dropdown-toggle" data-toggle="dropdown">
+                <button id="choose_level" class="button select-button dropdown-toggle" data-toggle="dropdown">
                     <span id="level">Уровень</span>
                     <img src="/Content/Images/Icons/caret.png">
                 </button>
+                <label class="error" id="level_error" style="display: none;" for="choose_level">Пожалуйста, выберите свой уровень</label>
                 <ul class="dropdown-menu">
                     <li><a href="#" onclick="SelectLevel(1)">Начальный</a></li>
                     <li><a href="#" onclick="SelectLevel(2)">Средний</a></li>
@@ -68,26 +69,21 @@
                 </ul>
 
                 <select id='hidden_select' name="levelselect" required hidden>
+                    <option name="def" value=""></option>
                     <option name='junior' value="Начальный">
-                        <div>
                             <span>Начальный</span>
-                        </div>
                     </option>
                     <option name='middle' value="Средний">
-                        <div>
                             <span>Средний</span>
-                        </div>
                     </option>
                     <option name='senior' value="Продвинутый">
-                        <div>
                             <span>Продвинутый</span>
-                        </div>
                     </option>
                 </select>
 
             </div>
             <div class="date-input">
-                <input id="date-set" name='datefield' readonly="readonly" type="text" class="button date-button" onclick="OpenCalendar()" value="дата">
+                <input id="date-set" name='datefield' readonly="readonly" type="text" class="button date-button" onclick="OpenCalendar()" placeholder="дата" required>
             </div>
             <div class="submit-input">
                 <button class="button try-button submit-button" type="submit"><span>Отправить</span></button>
@@ -982,7 +978,16 @@
             </div>
         </section>
         <section id="abonements" class="parallax_group">
-            <div class="container_fluid">
+            <div class="parallax_layer parallax_layer-fore half_layer" id="foreground_ball">
+                <img class="ball4" src="/Content/Images/balls/ball4_noShadow.png" alt="" />
+            </div>
+            <div class="parallax_layer parallax_layer-back">
+                <img class="ball3" src="/Content/Images/balls/ball3_noShadow.png" alt="" />
+            </div>
+            <div class="parallax_layer parallax_layer-near">
+                <img class="ball2" src="/Content/Images/balls/Ball_noShadow.png" alt="" />
+            </div>
+            <div class="container_fluid parallax_layer parallax_layer-base">
                 <div class="row top-align">
                     <div class="col-md-2 col-sm-6 col-xs-12 text-left">
                         <h1 class="heading"><span>Абонементы</span></h1>
@@ -1168,6 +1173,7 @@
     <script src="/Scripts/bootstrap.min.js"></script>
     <script src="/Scripts/jquery.easing.min.js"></script>
     <script src="/Plugins/jquery.maskedinput.min.js"></script>
+    <script src="/Scripts/jquery.validate.min.js"></script>
     <script src="/Scripts/script.js"></script>
 </body>
 </html>

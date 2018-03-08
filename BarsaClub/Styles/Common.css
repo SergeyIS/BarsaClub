@@ -331,6 +331,18 @@ h1 {
     box-shadow: -5px 5px 2em rgba(0,0,0,0.7);
 }
 
+.field{
+    text-align: center;
+}
+
+.choose-field{
+    text-align: center;
+}
+
+.date-input{
+    text-align: center;
+}
+
 .field input {
     width: 100%;
     height: 54px;
@@ -383,7 +395,7 @@ h1 {
 @media screen and (min-width:0\0) {
     .choose-field select {
         background-image: none\9;
-        padding: 5px\9;
+        padding: 5px;
     }
 }
 
@@ -453,6 +465,10 @@ h1 {
     transform: translateZ(-300px) scale(2);
 }
 
+#abonements .parallax_layer-back {
+    transform: translateZ(-150px) scale(1.6);
+}
+
 .parallax_layer-far {
     -webkit-transform: translateZ(-600px) scale(3.1);
     transform: translateZ(-600px) scale(3.1);
@@ -461,6 +477,10 @@ h1 {
 .parallax_layer-fore {
     -webkit-transform: translateZ(120px) scale(.6);
     transform: translateZ(120px) scale(.6);
+}
+
+#abonements .parallax_layer-fore {
+    display: none;
 }
 
 .parallax_layer-center {
@@ -488,6 +508,13 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+#abonements .ball3 {
+    top: 60%;
+    left: 48%;
+    filter: blur(5px) drop-shadow(0px 30px 30px rgba(0,51,153,0.3));
+    transform: translate(-50%, -50%) rotate(40deg);
+}
+
 .ball4 {
     margin-top: -100px;
     position: absolute;
@@ -499,6 +526,13 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+#abonements .ball4 {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) rotate(70deg);
+    filter: blur(7px) drop-shadow(8px 30px 30px rgba(0,51,153,0.3));
+}
+
 .ball2 {
     margin-top: -100px;
     position: absolute;
@@ -507,6 +541,13 @@ h1 {
     width: 70px;
     filter: drop-shadow(-18px 30px 30px rgba(0,51,153,0.3));
     transform: translate(-50%, -50%);
+}
+
+#abonements .ball2 {
+    left: 14%;
+    top: 48%;
+    filter: drop-shadow(-28px 20px 30px rgba(0,51,153,0.3));
+    transform: translate(-50%, -50%) rotate(-30deg);
 }
 
 section {
@@ -710,7 +751,42 @@ header {
     height: 80px;
 }
 
+    .date-input input::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    .date-input input::-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .date-input input:-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .date-input input:-ms-input-placeholder {
+        color: #ffffff;
+    }
+
+    .date-input input:focus::-webkit-input-placeholder {
+        color: transparent;
+    }
+
+    .date-input input:focus::-moz-placeholder {
+        color: transparent;
+    }
+
+    .date-input input:focus:-moz-placeholder {
+        color: transparent;
+    }
+
+    date-input:focus:-ms-input-placeholder {
+        color: transparent;
+    }
+
+
 .submit-button {
+    width: 100%;
+    max-width: 320px;
     box-shadow: 0px 5px 1em rgba(234,195,6,0.7);
 }
 
@@ -1134,8 +1210,6 @@ header {
     }
 
 #about {
-    background-image: url(../Content/Images/Logos/aboutFullHD.png);
-    background-position: 35% 0%;
     min-height: 1200px;
 }
 
@@ -1153,7 +1227,10 @@ header {
     }
 
 .about-container {
-    margin: 40px 10px;
+    background-image: url(../Content/Images/Logos/aboutFullHD.png);
+    background-repeat: no-repeat;
+    background-position: 35% 0%;
+    padding: 40px 10px;
 }
 
 .center-ball img {
@@ -1164,9 +1241,15 @@ header {
 }
 
 #abonements {
-    min-height: 700px;
-    height: auto;
+    height: 1200px;
+    background: unset;
 }
+
+    #abonements .parallax_layer > .row {
+        position: relative;
+        top: 50px;
+        margin: 30px;
+    }
 
 .abonement-item {
     background-color: #ffffff;
@@ -1377,4 +1460,42 @@ header {
 
 .ui-widget-content {
     color: #003399;
+}
+
+.error {
+    color: #ff5959;
+    border-color: #ff5959;
+}
+
+input.error {
+    border: 3px solid #ff5959;
+}
+
+label.error {
+    position: relative;
+    top: -10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.date-input label.error {
+    top: 0;
+}
+
+.parallax::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.parallax::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.parallax::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 0.25em;
+}
+
+#choose_level.error span{
+    color: #ffffff;
 }

@@ -1,6 +1,53 @@
-$(function(){
+$(function () {
+    $("#apply_form").submit(function (e) {
+        if (!IsLevelSelected) {
+            $('.select-button').addClass('error');
+            $('#level_error').css('display', 'block');
+            e.preventDefault(e);
+        }
+    });
   $("#phone").mask("+7(999) 999-99-99");
   $("#payphone").mask("+7(999) 999-99-99");
+  $("#pay_form").validate({
+      rules: {
+          name: "required",
+          phone: "required",
+          email: {
+              required: true,
+              email: true
+          }
+      },
+      messages: {
+          name: "Пожалуйста, введите свое имя",
+          phone: "Пожалуйста, введите номер телефона",
+          email: {
+              required: "Пожалуйста, введите email-адрес",
+              email: "Ваш email-адрес должен быть в формате name@domain.com"
+          }
+      }
+  });
+  $("#apply_form").validate({
+      rules: {
+          namefield: "required",
+          phone: "required",
+          levelselect: "required",
+          datefield: "required",
+          email: {
+              required: true,
+              email: true
+          }
+      },
+      messages: {
+          name: "Пожалуйста, введите свое имя",
+          phone: "Пожалуйста, введите номер телефона",
+          levelselect: "Пожалуйста, выберите ваш уровень",
+          datefield: "Пожалуйста, выберите дату тренировки",
+          email: {
+              required: "Пожалуйста, введите email-адрес",
+              email: "Ваш email-адрес должен быть в формате name@domain.com"
+          }
+      }
+  });
 });
 $('a.page-scroll').bind('click', function(event) {
     var currentScroll = $('#body-container').scrollTop();
@@ -51,6 +98,7 @@ function getMonday(d) {
         diff = d.getDate() - day + (day == 0 ? -6:1);
     return new Date(d.setDate(diff));
 }
+var IsLevelSelected = false;
 var currentDate = new Date(),
     currentMonday = getMonday(currentDate);
 var WeekCount = 0;
@@ -327,39 +375,36 @@ function ChooseArena(param){
 function HidePayApply(){
     $('#pay').css('display', 'none');
     $('#pay').css('opacity', '0');
-    //$('#apply').addClass("disappearToBottom");
 }
 function HideApply(){
     $('#apply').css('display', 'none');
     $('#apply').css('opacity', '0');
-    //$('#apply').addClass("disappearToBottom");
 }
 function ShowPayApply(sum){
-    //$('#apply').addClass("appearFromBottom");
     $('#pay').css('display', 'block');
     $('#pay').css('opacity', '1');
     $('#pay').find('#sum').val(sum);
 }
 function ShowApply(){
-    //$('#apply').addClass("appearFromBottom");
     $('#apply').css('display', 'block');
     $('#apply').css('opacity', '1');
 }
 function HideCalendar(){
     $('#calendar').css('display', 'none');
     $('#calendar').css('opacity', '0');
-    //$('#apply').addClass("disappearToBottom");
 }
 function OpenCalendar(){
     WeekCount = SelectedWeek;
     CheckSelectedWeek();
     FillDates(WeekCount);
-    //$('#apply').addClass("appearFromBottom");
     $('#calendar').css('display', 'block');
     $('#calendar').css('opacity', '1');
 }
 var lavel_value = 0;
-function SelectLevel(param){
+function SelectLevel(param) {
+    IsLevelSelected = true;
+    $('.select-button').removeClass('error');
+    $('#level_error').css('display', 'none');
     var level = $('#level');
     var level_select = $('#hidden_select');
     lavel_value = param;
