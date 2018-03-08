@@ -1,8 +1,12 @@
 ﻿using System;
-using System.Text;
+using System.IO;
+using System.Net;
 using System.Web;
+using System.Text;
 using System.Security.Cryptography;
 using NickBuhro.Translit;
+
+using System.Text.RegularExpressions;
 
 namespace BarsaClub.Infrastructure.Services.Payment
 {
@@ -19,16 +23,42 @@ namespace BarsaClub.Infrastructure.Services.Payment
             this.phone = phone;
             this.sum = String.Format("{0:0.00}", sum).Replace(',', '.');
         }
-        public static void Configure(RobokassaConfiguration configurator)
+
+        public RobokassaService(String name, String email, String phone, Double sum, String incCurrLabel) : 
+            this(name, email, phone, sum)
         {
-            if (configurator == null)
-                throw new ArgumentNullException();
-
-            if (String.IsNullOrEmpty(configurator.MerchantLogin) || String.IsNullOrEmpty(configurator.SecretKey))
-                throw new ArgumentException();
-
-            _configurator = configurator;
+            this.incCurrLabel = incCurrLabel;
         }
+
+        public String CalcOutSum()
+        {
+            return CalcOutSum(DEFAULT_PAYMENT);
+        }
+
+        public String CalcOutSum(String paymentMethod)
+        {
+            String outSum = this.sum;
+            try
+            {
+                var httpRequest = (HttpWebRequest)WebRequest.Create($"http://auth.robokassa.ru/Merchant/WebService/Service.asmx/" +
+                    $"CalcOutSumm?MerchantLogin={MerchantLogin}&IncCurrLabel={paymentMethod}&IncSum={sum}");
+
+
+                using (var responseReader = new StreamReader(httpRequest.GetResponse().GetResponseStream()))
+                {
+                    var text = responseReader.ReadToEnd();
+                    var match = Regex.Match(text, @"\<OutSum\>(.*?)\</OutSum\>");
+                    outSum = match.Groups[1].Value;
+                }
+            }
+            catch(Exception e)
+            {
+                
+            }
+            this.sum = outSum;
+            return outSum;
+        }
+
         private String CalculateSignature()
         {
             //base string for calculating
@@ -48,6 +78,17 @@ namespace BarsaClub.Infrastructure.Services.Payment
             signature = sb.ToString();
 
             return signature;
+        }
+
+        public static void Configure(RobokassaConfiguration configurator)
+        {
+            if (configurator == null)
+                throw new ArgumentNullException();
+
+            if (String.IsNullOrEmpty(configurator.MerchantLogin) || String.IsNullOrEmpty(configurator.SecretKey))
+                throw new ArgumentException();
+
+            _configurator = configurator;
         }
 
         public String MerchantLogin
@@ -96,7 +137,10 @@ namespace BarsaClub.Infrastructure.Services.Payment
         {
             get { return HttpUtility.UrlEncode(phone); }
         }
-
+        public String IncCurrLabel
+        {
+            get { return String.IsNullOrEmpty(incCurrLabel) ? DEFAULT_PAYMENT : incCurrLabel; }
+        }
 
         private String sum;
         private String name;
@@ -104,6 +148,9 @@ namespace BarsaClub.Infrastructure.Services.Payment
         private String email;
         private String phone;
         private String signature;
+        private String incCurrLabel;
         private static RobokassaConfiguration _configurator;
+
+        private const String DEFAULT_PAYMENT = "QCardR";
     }
 }

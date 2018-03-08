@@ -6,6 +6,7 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Оплата абонемента</title>
+    <link rel="icon" href="/Content/Images/favicon.ico" type="image/x-icon" />
 </head>
 <body>
     <div>
@@ -13,7 +14,7 @@
         <p>Сейчас вы будете перенаправлены на страницу оплаты.</p>
         <script>
             setTimeout(() => {
-                location.href = 'https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=@Model.MerchantLogin&OutSum=@Model.Sum&InvId=0&Shp_email=@Model.EmailUrlEncoded&Shp_name=@Model.NameUrlEncoded&Shp_phone=@Model.PhoneUrlEncoded&SignatureValue=@Model.Signature&IsTest=1';
+                location.href = 'https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=@Model.MerchantLogin&OutSum=@Model.Sum&InvId=0&Shp_email=@Model.EmailUrlEncoded&Shp_name=@Model.NameUrlEncoded&Shp_phone=@Model.PhoneUrlEncoded&SignatureValue=@Model.Signature&IncCurrLabel=@Model.IncCurrLabel&IsTest=1';
             }, 2000);
         </script>
     </div>

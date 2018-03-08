@@ -74,8 +74,12 @@ namespace BarsaClub.Controllers
 
             var robokassa = new RobokassaService(model.Name, model.Email, model.Phone, model.Sum);
 
+            robokassa.CalcOutSum(); //calculate out sum for bank card way of payment
+
+
             var redirectModel = new RedirectPaymetModel()
             {
+                Sum = robokassa.Sum,
                 Signature = robokassa.Signature,
                 MerchantLogin = robokassa.MerchantLogin,
                 Email = robokassa.Email,
@@ -84,11 +88,10 @@ namespace BarsaClub.Controllers
                 NameUrlEncoded = robokassa.NameUrlEncoded,
                 Phone = robokassa.Phone,
                 PhoneUrlEncoded = robokassa.PhoneUrlEncoded,
-                Sum = robokassa.Sum
+                IncCurrLabel = robokassa.IncCurrLabel
             };
 
             return View("PayPlatformRedirect", redirectModel);
         }
-
     }
 }
