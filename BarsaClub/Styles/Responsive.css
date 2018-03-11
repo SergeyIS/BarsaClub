@@ -111,6 +111,10 @@
 }
 
 @media (min-width: 768px) {
+    .choose-button{
+        padding: 0px 10px;
+    }
+
     .navbar-nav > li > a {
         line-height: 30px;
     }
@@ -272,6 +276,10 @@
 }
 
 @media (min-width: 992px) {
+    .head-number a, .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
+        font-size: 16px;
+    }
+
     .nav > li > a {
         padding: 10px 10px;
     }
@@ -291,6 +299,10 @@
 
     .half_layer {
         width: calc(100% / 2);
+    }
+
+    header .half_layer safari{
+        width: calc(110% / 2);
     }
 
     .ball3 {
@@ -316,6 +328,10 @@
 
     #abonements .parallax_layer-fore {
         width: calc(70% / 2);
+    }
+
+    #abonements .parallax_layer-fore safari{
+        width: calc(25% / 2);
     }
 
     #abonements .choose-button {
@@ -473,6 +489,10 @@
 
     #abonements .parallax_layer-fore {
         width: calc(80% / 2);
+    }
+
+    #abonements .parallax_layer-fore safari{
+        width: calc(30% / 2);
     }
 
     .events .col-140 button {

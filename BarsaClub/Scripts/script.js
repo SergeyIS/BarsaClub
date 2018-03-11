@@ -1,4 +1,8 @@
 $(function () {
+    if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+        $("#foreground_ball").addClass("safari");
+        $("#foreground_ball_abonem").addClass("safari");
+    }
     $("#apply_form").submit(function (e) {
         if (!IsLevelSelected) {
             $('.select-button').addClass('error');
