@@ -233,6 +233,14 @@
         top: 30%;
     }
 
+    #abonements .parallax_layer-near{
+        display: block;
+    }
+
+    #abonements .parallax_layer-back{
+        display: block;
+    }
+
     .col-abonem {
         width: 50%;
     }

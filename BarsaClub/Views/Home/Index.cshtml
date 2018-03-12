@@ -18,77 +18,81 @@
 <body id="page-top">
     <div class="apply-form animated" id="pay" style="display:none;">
         <a id="back_pay" href="#" onclick="HidePayApply()"></a>
-        <form class="field-container" action="/home/pay" method="post" id="pay_form">
-            <div class="close-container">
-                <button class="close-button" type="reset" onclick="HidePayApply()">
-                    <img src="/Content/Images/Icons/close.png">
-                </button>
-            </div>
-            <div class="field">
-                <input type="text" name="name" id="payname_field" placeholder="ИМЯ...|" required>
-            </div>
-            <div class="field">
-                <input type="email" name="email" id="payemail_field" placeholder="E-MAIl...|" required>
-            </div>
-            <div class="field">
-                <input type="tel" name="phone" id="payphone" placeholder="ТЕЛЕФОН...|" required>
-            </div>
-            <div class="submit-input">
-                <button class="button submit-button" type="submit"><span>Отправить</span></button>
-            </div>
-            <input type="text" name="sum" id="sum" hidden/>
-        </form>
+        <div class="field-container-overflow" id="pay_form_container">
+            <form class="field-container" action="/home/pay" method="post" id="pay_form">
+                <div class="close-container">
+                    <button class="close-button" type="reset" onclick="HidePayApply()">
+                        <img src="/Content/Images/Icons/close.png">
+                    </button>
+                </div>
+                <div class="field">
+                    <input type="text" name="name" id="payname_field" placeholder="ИМЯ...|" required>
+                </div>
+                <div class="field">
+                    <input type="email" name="email" id="payemail_field" placeholder="E-MAIl...|" required>
+                </div>
+                <div class="field">
+                    <input type="tel" name="phone" id="payphone" placeholder="ТЕЛЕФОН...|" required>
+                </div>
+                <div class="submit-input">
+                    <button class="button submit-button" type="submit"><span>Отправить</span></button>
+                </div>
+                <input type="text" name="sum" id="sum" hidden />
+            </form>
+        </div>
     </div>
     <div class="apply-form animated" id="apply" style="display:none;">
         <a id="back" href="#" onclick="HideApply()"></a>
-        <form class="field-container" action="/home/trialworkout" method="post" id="apply_form">
-            <div class="close-container">
-                <button class="close-button" type="reset" onclick="HideApply()">
-                    <img src="/Content/Images/Icons/close.png">
-                </button>
-            </div>
-            <div class="field">
-                <input type="text" name="namefield" id="name_field" placeholder="ИМЯ...|" required>
-            </div>
-            <div class="field">
-                <input type="email" name="email" id="email_field" placeholder="E-MAIl...|" required>
-            </div>
-            <div class="field">
-                <input type="tel" name="phone" id="phone" placeholder="ТЕЛЕФОН...|" required>
-            </div>
-            <div class="choose-field">
-                <button id="choose_level" class="button select-button dropdown-toggle" data-toggle="dropdown">
-                    <span id="level">Уровень</span>
-                    <img src="/Content/Images/Icons/caret.png">
-                </button>
-                <label class="error" id="level_error" style="display: none;" for="choose_level">Пожалуйста, выберите свой уровень</label>
-                <ul class="dropdown-menu">
-                    <li><a href="#" onclick="SelectLevel(1)">Начальный</a></li>
-                    <li><a href="#" onclick="SelectLevel(2)">Средний</a></li>
-                    <li><a href="#" onclick="SelectLevel(3)">Продвинутый</a></li>
-                </ul>
+        <div class="field-container-overflow" id="apply_form_container">
+            <form class="field-container" action="/home/trialworkout" method="post" id="apply_form">
+                <div class="close-container">
+                    <button class="close-button" type="reset" onclick="HideApply()">
+                        <img src="/Content/Images/Icons/close.png">
+                    </button>
+                </div>
+                <div class="field">
+                    <input type="text" name="namefield" id="name_field" placeholder="ИМЯ...|" required>
+                </div>
+                <div class="field">
+                    <input type="email" name="email" id="email_field" placeholder="E-MAIl...|" required>
+                </div>
+                <div class="field">
+                    <input type="tel" name="phone" id="phone" placeholder="ТЕЛЕФОН...|" required>
+                </div>
+                <div class="choose-field">
+                    <button id="choose_level" class="button select-button dropdown-toggle" data-toggle="dropdown">
+                        <span id="level">Уровень</span>
+                        <img src="/Content/Images/Icons/caret.png">
+                    </button>
+                    <label class="error" id="level_error" style="display: none;" for="choose_level">Пожалуйста, выберите свой уровень</label>
+                    <ul class="dropdown-menu" id="choose_dropdown">
+                        <li><a href="#" onclick="SelectLevel(1)">Начальный</a></li>
+                        <li><a href="#" onclick="SelectLevel(2)">Средний</a></li>
+                        <li><a href="#" onclick="SelectLevel(3)">Продвинутый</a></li>
+                    </ul>
 
-                <select id='hidden_select' name="levelselect" required hidden>
-                    <option name="def" value=""></option>
-                    <option name='junior' value="Начальный">
+                    <select id='hidden_select' name="levelselect" required hidden>
+                        <option name="def" value=""></option>
+                        <option name='junior' value="Начальный">
                             <span>Начальный</span>
-                    </option>
-                    <option name='middle' value="Средний">
+                        </option>
+                        <option name='middle' value="Средний">
                             <span>Средний</span>
-                    </option>
-                    <option name='senior' value="Продвинутый">
+                        </option>
+                        <option name='senior' value="Продвинутый">
                             <span>Продвинутый</span>
-                    </option>
-                </select>
+                        </option>
+                    </select>
 
-            </div>
-            <div class="date-input">
-                <input id="date-set" name='datefield' readonly="readonly" type="text" class="button date-button" onclick="OpenCalendar()" placeholder="дата" required>
-            </div>
-            <div class="submit-input">
-                <button class="button try-button submit-button" type="submit"><span>Отправить</span></button>
-            </div>
-        </form>
+                </div>
+                <div class="date-input">
+                    <input id="date-set" name='datefield' readonly="readonly" type="text" class="button date-button" onclick="OpenCalendar()" placeholder="дата" required>
+                </div>
+                <div class="submit-input">
+                    <button class="button try-button submit-button" type="submit"><span>Отправить</span></button>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="calendar" id="calendar" style="display: none;">
         <div id="calendar_container" class="calendar-container animated">
@@ -642,8 +646,8 @@
                         <p>Наши тренеры найдут <strong>индивидуальный подход</strong> к каждому волейболисту, составят <strong>персональный план тренировок.</strong></p>
                         <p>В составе ВК BarsA 4 женские и 2 мужские команды от начального до продвинутого уровня. Наши команды успешно выступают в турнирах, занимая призовые места.</p>
                         <br>
-                        <p class="text-small">Будем рады видеть Вас в клубе BarsA!</p>
-                        <p class="text-small">Вкладывайте силы и получайте еще больше!</p>
+                        <p>Будем рады видеть Вас в клубе BarsA!</p>
+                        <p>Вкладывайте силы и получайте еще больше!</p>
 
                     </div>
                     <div class="col-md-7 col-md-offset-5 text-center">
@@ -921,7 +925,6 @@
                         </div>
                         <div class="trainer-description text-center">
                             <p>Высшая тренерская категория, международный сертификат FIVB и почетное спортивное звание «Заслуженный тренер России»!</p>
-                            <br/>
                             <p>Под его руководством сборная команда СССР становилась серебряным призером Первенства Мира среди юношей в 1991 г (Португалия), Первенства Европы в Польше в 1992г.</p>
                         </div>
                     </div>

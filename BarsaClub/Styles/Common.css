@@ -324,17 +324,40 @@ h1 {
     height: 37px;
 }
 
+.field-container-overflow {
+    padding: 50px 40px 30px 40px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 436px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-height: calc(100%);
+    overflow-y: auto;
+}
+
 .field-container {
     position: absolute;
-    top: calc(50% + 40px);
+    /*top: calc(50% + 40px);
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
     background-color: #ffffff;
     border-radius: 25px;
     width: calc(100% - 80px);
-    max-width: 356px;
+    /*max-width: 356px;*/
     padding: 25px;
     box-shadow: -5px 5px 2em rgba(0,0,0,0.7);
+}
+
+#apply_form_container{
+    height: 680px;
+    max-height: 100%;
+}
+
+#pay_form_container{
+    height: 520px;
+    max-height: 100%;
 }
 
 .field{
@@ -452,7 +475,7 @@ h1 {
 
 .parallax_group {
     position: relative;
-    height: 100vh;
+    /*height: 100vh;*/
     transform-style: preserve-3d;
 }
 
@@ -466,13 +489,20 @@ h1 {
     transform: translateZ(-30px) scale(1.1);
 }
 
+#abonements .parallax_layer-near{
+    display: none;
+}
+
 .parallax_layer-back {
     -webkit-transform: translateZ(-300px) scale(2);
     transform: translateZ(-300px) scale(2);
 }
 
 #abonements .parallax_layer-back {
-    transform: translateZ(-150px) scale(1.6);
+    display: none;
+    height: 50vh;
+    top: 60%;
+    transform: translate(0,-50%) translateZ(-150px) scale(1.6);
 }
 
 .parallax_layer-far {
@@ -550,7 +580,7 @@ h1 {
 }
 
 #abonements .ball2 {
-    left: 14%;
+    left: 4%;
     top: 48%;
     filter: drop-shadow(-28px 20px 30px rgba(0,51,153,0.3));
     transform: translate(-50%, -50%) rotate(-30deg);
@@ -561,7 +591,7 @@ section {
 }
 
 header {
-    height: 100%;
+    height: 100vh;
     min-height: auto;
     padding-top: 20px;
     /*
@@ -650,7 +680,8 @@ header {
     transition: 0.3s ease-in-out;
     transform: scaleY(0);
     opacity: 0;
-    width: 306px;
+    width: calc(100% - 50px);
+    max-width: 306px;
     left: unset;
     top: unset;
     background-color: transparent;
@@ -979,6 +1010,10 @@ header {
     z-index: 1050;
 }
 
+#home_arenas{
+    height: 100vh;
+}
+
 #learn {
     min-height: 950px;
 }
@@ -1196,7 +1231,7 @@ header {
 }
 
 .trainer p {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 .trainer-image img {
@@ -1243,7 +1278,7 @@ header {
     background-image: url(../Content/Images/Logos/aboutFullHD.png);
     background-repeat: no-repeat;
     background-position: 35% 0%;
-    padding: 40px 10px;
+    padding: 40px 20px;
 }
 
 .center-ball img {

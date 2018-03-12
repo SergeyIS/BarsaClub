@@ -10,6 +10,20 @@ $(function () {
             e.preventDefault(e);
         }
     });
+    //var applyForm = $("#apply_form");
+    //var applyContainer = $("#apply_form_container");
+    //var neededHeight = applyForm.innerHeight() + 80 + 'px';
+    //var windowHeight = $(window).innerHeight();
+    //if (parseInt(neededHeight) <= parseInt(windowHeight)) {
+    //    applyContainer.css('height', neededHeight);
+    //}
+    //applyForm.resize(function (e) {
+    //    var neededHeight = applyForm.innerHeight() + 80 + 'px';
+    //    var windowHeight = $(window).innerHeight();
+    //    if (parseInt(neededHeight) <= parseInt(windowHeight)) {
+    //        applyContainer.css('height', neededHeight);
+    //    }
+    //});
   $("#phone").mask("+7(999) 999-99-99");
   $("#payphone").mask("+7(999) 999-99-99");
   $("#pay_form").validate({
@@ -163,24 +177,6 @@ function UnMarkAll(){
         $(this).removeClass('active');  
     });
 }
-//function FindButton(day, metroId, timeCount){
-//    UnMarkAll();
-//    var allButtons = $('.time-container').toArray();
-//    for(var i=0;i<allButtons.length;i++){
-//        var stringday = day+'';
-//        var stringMetro = metroId + '';
-//        if(((allButtons[i].dataset.day+'') == stringday)&&((allButtons[i].dataset.metroId+'') == stringMetro)){
-//            allButtons[i].children[timeCount].classList+=' active';
-//            document.querySelector('line_'+metroId).classList+=' active';
-//        }
-//    }
-//    $.each(allButtons,function(index,value){
-//        if((($(this).data('day')+'') == (day+''))&&(($(this).data('metroId')+'') == (metroId+''))){
-//            $(this).children()[timeCount].addClass('active');
-//            $('#line_'+metroId).addClass('active');
-//        }
-//    });
-//}
 var activeButton = null;
 var activeLine = null;
 function OpenCalendarWidthSelect(day, metroId, time, timeCount){
@@ -290,12 +286,8 @@ function CheckEmptyCalendar(){
             filled_columns[i].parentElement.parentElement.parentElement.classList="col col-140 exist";
         }
     }
-    //var existing_divs = document.querySelectorAll('.col-140 .time-container');
-//    for(var i=0;i<existing_divs.length;i++){
-//        var children = existing_divs[i].children;
     $('.time-container button').each(function(){
         var parent = $(this).parent('div');
-        //var div_height = parent.height() - 1;
         var div_height = 70;
         var parentCount = $(this).siblings().length + 1;
         $(this).css('lineHeight', (div_height / parentCount) + "px");
@@ -304,7 +296,6 @@ function CheckEmptyCalendar(){
         }
         switch (parentCount){
             case 3:
-                //$(this).css('lineHeight', (div_height / parentCount) + "px");
                 $(this).css('fontSize', '16px');
                 break;
        }
@@ -389,9 +380,16 @@ function ShowPayApply(sum){
     $('#pay').css('opacity', '1');
     $('#pay').find('#sum').val(sum);
 }
-function ShowApply(){
+function ShowApply() {
     $('#apply').css('display', 'block');
     $('#apply').css('opacity', '1');
+    //var applyForm = $("#apply_form");
+    //var applyContainer = $("#apply_form_container");
+    //var neededHeight = applyForm.innerHeight() + 80 + 'px';
+    //var windowHeight = $(window).innerHeight();
+    //if (parseInt(neededHeight) <= parseInt(windowHeight)) {
+    //    applyContainer.css('height', neededHeight);
+    //}
 }
 function HideCalendar(){
     $('#calendar').css('display', 'none');
@@ -433,71 +431,10 @@ function HideForm() {
 function ShowFailure() {
     $('#message-area').html("<div class='alert alert-danger'><strong>Ошибка!</strong>Не удалось подключиться к серверу, поэтому ваше сообщение не было отправилено. Пожалуйста, проверьте ваше подключение к сети и попробуйте еще раз</div>");
 }
-//$(window).scroll(function () {
-//    var windowScroll = window.pageYOffset;
-//    var servicesScroll = $("#services").offset().top;
-//    /*var examplesScroll = $("#examples").offset().top;*/
-//    var contactScroll = $("#contact").offset().top;
-//    if (windowScroll >= servicesScroll - 60) {
-//        $("#moreId").removeClass('active');
-//    }
-//    else {
-//        $("#moreId").addClass('active');
-//    }
-//    if (windowScroll >= servicesScroll - 60 && windowScroll <= contactScroll - 60) {
-//        $("#servicesId").addClass('active');
-//    }
-//    else {
-//        $("#servicesId").removeClass('active');
-//    }
-//    /*if (windowScroll >= examplesScroll - 60 && windowScroll <= contactScroll - 60) {
-//        $("#examplesId").addClass('active');
-//    }
-//    else {
-//        $("#examplesId").removeClass('active');
-//    }*/
-//    if (windowScroll >= contactScroll - 60) {
-//        $("#contactId").addClass('active');
-//    }
-//    else {
-//        $("#contactId").removeClass('active');
-//    }
-//});
 $(document).ready(function () {
     CheckEmptyCalendar();
     FillDates(0);
     ShowCalendarColumn(0);
-//    $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
-//    $( "#datepicker" ).datepicker({
-//        closeText: 'Закрыть',
-//        prevText: '',
-//        currentText: 'Сегодня',
-//        monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь',
-//            'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-//        monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн',
-//            'Июл','Авг','Сен','Окт','Ноя','Дек'],
-//        dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
-//        dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
-//        dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
-//        weekHeader: 'Не',
-//        dateFormat: 'dd.mm.yy',
-//        firstDay: 1,
-//        isRTL: false,
-//        showMonthAfterYear: false,
-//        yearSuffix: ''
-//    });
     ChooseLearn('classic');
     ChooseArena('kuznecky');
-    if ($(window).innerWidth() >= 1366) {
-        var a = $(window).innerHeight() - $('.heading').innerHeight();
-        $('.main-image').css('height', a + 'px');
-        $('.main-image').css('max-width', '100%');
-    }
-});
-$(window).resize(function () {
-    if ($(window).innerWidth() >= 1366) {
-        var a = $(window).innerHeight() - $('.heading').innerHeight();
-        $('.main-image').css('height', a + 'px');
-        $('.main-image').css('max-width', '100%');
-    }
 });
