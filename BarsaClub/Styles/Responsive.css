@@ -191,9 +191,13 @@
         min-height: 700px;
     }
 
-    #learn, #home_arenas, #trainers, #contacts {
+    #learn, #trainers, #contacts {
         padding: 40px 20px;
     }
+
+     #home_arenas>.container-fluid{
+         padding: 40px;
+     }
 
     #about {
         min-height: 850px;
@@ -379,15 +383,15 @@
             background-image: url(../Content/Images/backgrounds/Tournir.jpg);
         }
 
-    #home_arenas.kuznecky {
+    #home_arenas.kuznecky>.container-fluid{
         background-image: url(../Content/Images/backgrounds/kuznecky.jpg);
     }
 
-    #home_arenas.dostoevskaya {
+    #home_arenas.dostoevskaya>.container-fluid {
         background-image: url(../Content/Images/backgrounds/dostoevskaya.jpg);
     }
 
-    #home_arenas.oktyabrskaya {
+    #home_arenas.oktyabrskaya>.container-fluid {
         background-image: url(../Content/Images/backgrounds/oktyabrskaya.jpg);
     }
 

@@ -508,7 +508,7 @@ h1 {
 
 .parallax_layer-far {
     -webkit-transform: translateZ(-600px) scale(3.1);
-    transform: translateZ(-600px) scale(3.1);
+    transform: translateZ(-500px) scale(3);
 }
 
 .parallax_layer-fore {
@@ -592,7 +592,7 @@ section {
 }
 
 header {
-    height: 100vh;
+    height: calc(100vh - 50px);
     min-height: auto;
     padding-top: 20px;
     /*
@@ -617,11 +617,6 @@ header {
     transform: translate(-50%, 0%);
 }
 
-.try-button {
-    width: 320px;
-    text-align: center;
-    padding: 0px;
-}
 
 .button {
     cursor: pointer;
@@ -638,6 +633,17 @@ header {
     border: none;
     outline: none;
     box-shadow: -2px 8px 3em rgba(234,195,6,0.7);
+}
+
+.try-button {
+    width: 320px;
+    text-align: center;
+    padding: 0px;
+}
+
+#about .try-button{
+    width: 100%;
+    max-width: 320px;
 }
 
     .button:hover {
@@ -1006,7 +1012,7 @@ header {
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 40px 10px;
+    padding: 40px 15px;
     min-height: 850px;
     z-index: 1050;
 }
@@ -1014,6 +1020,13 @@ header {
 #home_arenas{
     height: 100vh;
 }
+
+    #home_arenas>.container-fluid {
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 40px 30px;
+    }
 
 #learn {
     min-height: 950px;
@@ -1116,15 +1129,15 @@ header {
         background-image: url(../Content/Images/backgrounds/Tournir_mobile.jpg);
     }
 
-#home_arenas.kuznecky {
+#home_arenas.kuznecky>.container-fluid{
     background-image: url(../Content/Images/backgrounds/kuznecky_mobile.jpg);
 }
 
-#home_arenas.dostoevskaya {
+#home_arenas.dostoevskaya>.container-fluid {
     background-image: url(../Content/Images/backgrounds/dostoevskaya_mobile.jpg)
 }
 
-#home_arenas.oktyabrskaya {
+#home_arenas.oktyabrskaya>.container-fluid {
     background-image: url(../Content/Images/backgrounds/oktyabrskaya_mobile.jpg);
 }
 
@@ -1218,7 +1231,7 @@ header {
 }
 
 .trainer-image {
-    height: 500px;
+    height: 350px;
     position: relative;
 }
 
@@ -1300,13 +1313,18 @@ header {
         margin: 30px;
     }
 
-.abonement-item {
-    background-color: #ffffff;
-    border-radius: 25px;
-    filter: drop-shadow(-5px 5px 10px rgba(0,51,153,0.4));
-    height: 410px;
-    width: 260px;
-}
+    #abonements .top-align .text-left,
+    #abonements .top-align .text-right{
+        padding: 0px;
+    }
+
+    .abonement-item {
+        background-color: #ffffff;
+        border-radius: 25px;
+        filter: drop-shadow(-5px 5px 10px rgba(0,51,153,0.4));
+        height: 410px;
+        width: 260px;
+    }
 
 .col-abonem {
     float: left;
