@@ -456,7 +456,8 @@ h1 {
     margin-top: 100px;
     height: calc(100% - 100px);
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     perspective-origin-x: 100%;
 }
 
@@ -776,7 +777,7 @@ header {
 
     .close-button img {
         width: 100%;
-        filter: drop-shadow(0px 0px 1em rgba(0,51,153,0.7));
+        /*filter: drop-shadow(0px 0px 1em rgba(0,51,153,0.7));*/
     }
 
     .close-button:hover,
