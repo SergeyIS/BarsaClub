@@ -391,34 +391,38 @@ h1 {
 
     .field input::-webkit-input-placeholder {
         color: #003399;
+        opacity: 0.5;
     }
 
     .field input::-moz-placeholder {
         color: #003399;
+        opacity: 0.5;
     }
 
     .field input:-moz-placeholder {
         color: #003399;
+        opacity: 0.5;
     }
 
     .field input:-ms-input-placeholder {
         color: #003399;
+        opacity: 0.5;
     }
 
     .field input:focus::-webkit-input-placeholder {
-        color: transparent
+        color: transparent;
     }
 
     .field input:focus::-moz-placeholder {
-        color: transparent
+        color: transparent;
     }
 
     .field input:focus:-moz-placeholder {
-        color: transparent
+        color: transparent;
     }
 
     .field input:focus:-ms-input-placeholder {
-        color: transparent
+        color: transparent;
     }
 
 @media screen and (min-width:0\0) {
@@ -518,6 +522,10 @@ h1 {
 
 #abonements .parallax_layer-fore {
     display: none;
+}
+
+header .half_layer safari {
+    width: calc(100% / 2 - 30px);
 }
 
 .parallax_layer-center {
