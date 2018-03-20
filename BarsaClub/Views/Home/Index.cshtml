@@ -589,7 +589,7 @@
             <div class="parallax_layer parallax_layer-base sub-header">
                 <div class="container-fluid">
                     <div class="row text-center">
-                        <div class="text-center">
+                        <div class="text-center main-logo">
                             <img class="logo-image" src="/Content/Images/Logos/RichLogo.png" alt="" />
                         </div>
                         <div class="text-center button-container">
@@ -611,7 +611,7 @@
             -->
         </header>
         <section id="learn" class="parallax_group">
-            <div class="container-fluid" id="more-container">
+            <div class="container-fluid parallax_layer parallax_layer-base">
                 <div class="row top-align">
                     <div class="col-md-2 col-sm-4 col-xs-12 text-left">
                         <h1 class="heading"><span>ОБУЧЕНИЕ</span></h1>
@@ -681,199 +681,201 @@
             </div>
         </section>
         <section id="home_arenas" class="parallax_group">
-            <div class="container-fluid parallax_layer parallax_layer-base" id="more-container">
-                <div class="row top-align">
-                    <div class="col-md-4 col-sm-7 col-xs-12 text-left">
-                        <h1 class="heading"><span>ДОМАШНИЕ АРЕНЫ</span></h1>
-                    </div>
-                    <div class="col-md-8 col-sm-5 col-xs-12 text-right">
-                        <div class="container-headings">
-                            <div class="choose-heading">
-                                <button class="choose-button metro-button" id="kuznecky-button" onclick="ChooseArena('kuznecky')">
-                                    <img src="/Content/Images/Icons/Metro_small8.png">
-                                    <span>Кузнецкий мост</span>
-                                </button>
-                            </div>
-                            <div class="choose-heading">
-                                <button class="choose-button metro-button" id="dostoevskaya-button" onclick="ChooseArena('dostoevskaya')">
-                                    <img src="/Content/Images/Icons/Metro_small8.png">
-                                    <span>Достоевская</span>
-                                </button>
-                            </div>
-                            <div class="choose-heading">
-                                <button class="choose-button metro-button" id="oktyabrskaya-button" onclick="ChooseArena('oktyabrskaya')">
-                                    <img src="/Content/Images/Icons/Metro_small8.png">
-                                    <span>Октябрьская</span>
-                                </button>
-                            </div>
+            <div class="parallax_layer parallax_layer-base" id="more-container">
+                <div class="container-fluid">
+                    <div class="row top-align">
+                        <div class="col-md-4 col-sm-7 col-xs-12 text-left">
+                            <h1 class="heading"><span>ДОМАШНИЕ АРЕНЫ</span></h1>
                         </div>
-                    </div>
-                </div>
-                <div class="row learn-content arena-content content-kuznecky">
-                    <div class="col-md-7 col-md-offset-5 text-left">
-                        <div class="container-fluid arena-description">
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Метро:</strong></span>
-                                </div>
-                                <div class="col-xs-7">
-                                    <span>Кузнецкий мост</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Покрытие:</strong></span>
-                                </div>
-                                <div class="col-xs-7">
-                                    <span>Паркет</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Раздевалки:</strong></span>
-                                </div>
-                                <div class="col-xs-7">
-                                    <span>Есть</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Душевые:</strong></span>
-                                </div>
-                                <div class="col-xs-7">
-                                    <span>Есть</span>
-                                </div>
-                            </div>
-                            <div class="row button-row">
-                                <div class="col-xs-12">
-                                    <button class="button button-white" onclick="SelectDate(2,2,'20:00-22:00',0)">
-                                        <span><strong>Среда</strong> 20:00 - 22:00</span>
+                        <div class="col-md-8 col-sm-5 col-xs-12 text-right">
+                            <div class="container-headings">
+                                <div class="choose-heading">
+                                    <button class="choose-button metro-button" id="kuznecky-button" onclick="ChooseArena('kuznecky')">
+                                        <img src="/Content/Images/Icons/Metro_small8.png">
+                                        <span>Кузнецкий мост</span>
                                     </button>
                                 </div>
-                                <div class="col-xs-12">
-                                    <button class="button button-white" onclick="SelectDate(5,2,'20:00-22:00',0)">
-                                        <span><strong>Суббота</strong> 20:00 - 22:00</span>
+                                <div class="choose-heading">
+                                    <button class="choose-button metro-button" id="dostoevskaya-button" onclick="ChooseArena('dostoevskaya')">
+                                        <img src="/Content/Images/Icons/Metro_small8.png">
+                                        <span>Достоевская</span>
                                     </button>
                                 </div>
-                                <div class="col-xs-12">
-                                    <button class="button button-white" onclick="SelectDate(6,2,'11:00-13:00',0)">
-                                        <span><strong>Воскресенье</strong> 11:00 - 13:00</span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-12">
-                                    <button class="button button-white" onclick="SelectDate(6,2,'14:00-16:00',1)">
-                                        <span><strong>Воскресенье</strong> 15:00 - 17:00</span>
+                                <div class="choose-heading">
+                                    <button class="choose-button metro-button" id="oktyabrskaya-button" onclick="ChooseArena('oktyabrskaya')">
+                                        <img src="/Content/Images/Icons/Metro_small8.png">
+                                        <span>Октябрьская</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row learn-content arena-content content-dostoevskaya">
-                    <div class="col-md-7 col-md-offset-5 text-left">
-                        <div class="container-fluid arena-description">
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Метро:</strong></span>
+                    <div class="row learn-content arena-content content-kuznecky">
+                        <div class="col-md-7 col-md-offset-5 text-left">
+                            <div class="container-fluid arena-description">
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Метро:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Кузнецкий мост</span>
+                                    </div>
                                 </div>
-                                <div class="col-xs-7">
-                                    <span>Достоевская</span>
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Покрытие:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Паркет</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Покрытие:</strong></span>
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Раздевалки:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Есть</span>
+                                    </div>
                                 </div>
-                                <div class="col-xs-7">
-                                    <span>Паркет</span>
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Душевые:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Есть</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Раздевалки:</strong></span>
-                                </div>
-                                <div class="col-xs-7">
-                                    <span>Есть</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Душевые:</strong></span>
-                                </div>
-                                <div class="col-xs-7">
-                                    <span>Есть</span>
-                                </div>
-                            </div>
-                            <div class="row button-row">
-                                <div class="col-xs-12">
-                                    <button class="button button-white" onclick="SelectDate(5,1,'12:00-14:00',0)">
-                                        <span><strong>Суббота</strong> 12:00 - 14:00</span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-12">
-                                    <button class="button button-white" onclick="SelectDate(5,1,'15:00-17:00',1)">
-                                        <span><strong>Суббота</strong> 15:00 - 17:00</span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-12">
-                                    <button class="button button-white" onclick="SelectDate(6,1,'12:00-14:00',0)">
-                                        <span><strong>Воскресенье</strong> 12:00 - 14:00</span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-12">
-                                    <button class="button button-white" onclick="SelectDate(6,1,'12:00-14:00',1)">
-                                        <span><strong>Воскресенье</strong> 15:00 - 17:00</span>
-                                    </button>
+                                <div class="row button-row">
+                                    <div class="col-xs-12">
+                                        <button class="button button-white" onclick="SelectDate(2,2,'20:00-22:00',0)">
+                                            <span><strong>Среда</strong> 20:00 - 22:00</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button class="button button-white" onclick="SelectDate(5,2,'20:00-22:00',0)">
+                                            <span><strong>Суббота</strong> 20:00 - 22:00</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button class="button button-white" onclick="SelectDate(6,2,'11:00-13:00',0)">
+                                            <span><strong>Воскресенье</strong> 11:00 - 13:00</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button class="button button-white" onclick="SelectDate(6,2,'14:00-16:00',1)">
+                                            <span><strong>Воскресенье</strong> 15:00 - 17:00</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row learn-content arena-content content-oktyabrskaya">
-                    <div class="col-md-7 col-md-offset-5 text-left">
-                        <div class="container-fluid arena-description">
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Метро:</strong></span>
+                    <div class="row learn-content arena-content content-dostoevskaya">
+                        <div class="col-md-7 col-md-offset-5 text-left">
+                            <div class="container-fluid arena-description">
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Метро:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Достоевская</span>
+                                    </div>
                                 </div>
-                                <div class="col-xs-7">
-                                    <span>Октябрьская</span>
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Покрытие:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Паркет</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Раздевалки:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Есть</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Душевые:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Есть</span>
+                                    </div>
+                                </div>
+                                <div class="row button-row">
+                                    <div class="col-xs-12">
+                                        <button class="button button-white" onclick="SelectDate(5,1,'12:00-14:00',0)">
+                                            <span><strong>Суббота</strong> 12:00 - 14:00</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button class="button button-white" onclick="SelectDate(5,1,'15:00-17:00',1)">
+                                            <span><strong>Суббота</strong> 15:00 - 17:00</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button class="button button-white" onclick="SelectDate(6,1,'12:00-14:00',0)">
+                                            <span><strong>Воскресенье</strong> 12:00 - 14:00</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button class="button button-white" onclick="SelectDate(6,1,'12:00-14:00',1)">
+                                            <span><strong>Воскресенье</strong> 15:00 - 17:00</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Покрытие:</strong></span>
+                        </div>
+                    </div>
+                    <div class="row learn-content arena-content content-oktyabrskaya">
+                        <div class="col-md-7 col-md-offset-5 text-left">
+                            <div class="container-fluid arena-description">
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Метро:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Октябрьская</span>
+                                    </div>
                                 </div>
-                                <div class="col-xs-7">
-                                    <span>Паркет</span>
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Покрытие:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Паркет</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Раздевалки:</strong></span>
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Раздевалки:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Есть</span>
+                                    </div>
                                 </div>
-                                <div class="col-xs-7">
-                                    <span>Есть</span>
+                                <div class="row">
+                                    <div class="col-xs-5 text-left">
+                                        <span><strong>Душевые:</strong></span>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <span>Есть</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-5 text-left">
-                                    <span><strong>Душевые:</strong></span>
-                                </div>
-                                <div class="col-xs-7">
-                                    <span>Есть</span>
-                                </div>
-                            </div>
-                            <div class="row button-row">
-                                <div class="col-xs-12">
-                                    <button class="button button-white" onclick="SelectDate(1,3,'20:00-22:00',0)">
-                                        <span><strong>Вторник</strong> 20:00 - 22:00</span>
-                                    </button>
-                                </div>
-                                <div class="col-xs-12">
-                                    <button class="button button-white" onclick="SelectDate(3,3,'20:00-22:00',0)">
-                                        <span><strong>Четверг</strong> 20:00 - 22:00</span>
-                                    </button>
+                                <div class="row button-row">
+                                    <div class="col-xs-12">
+                                        <button class="button button-white" onclick="SelectDate(1,3,'20:00-22:00',0)">
+                                            <span><strong>Вторник</strong> 20:00 - 22:00</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button class="button button-white" onclick="SelectDate(3,3,'20:00-22:00',0)">
+                                            <span><strong>Четверг</strong> 20:00 - 22:00</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -937,45 +939,47 @@
                     <img src="/Content/Images/Balls/ballCenter.png">
                 </div>
             </div>
-            <div class="container_fluid parallax_layer parallax_layer-base about-container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-7 col-xs-12 text-left">
-                        <h1 class="heading"><span>О клубе</span></h1>
+            <div class="parallax_layer parallax_layer-base about-container">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-7 col-xs-12 text-left">
+                            <h1 class="heading"><span>О клубе</span></h1>
+                        </div>
                     </div>
-                </div>
-                <div class="row about-description">
-                    <div class="col-xs-12">
-                        <p>Волейбольный клуб "BarsA" <strong>основан в 2016 году.</strong></p>
-                        <br>
-                    </div>
-                    <div class="col-xs-12">
-                        <p><strong>Миссия клуба</strong> - достичь высокой производительности спортсменов, обучить и реализовать их спортивный потенциал.</p>
-                        <br>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <p>В ВК "BarsA" работают <strong>профессиональные тренеры</strong>, которые по-настоящему любят свое дело.</p>
-                        <p>Наши <strong>тренировки проходят исключительно на высоком уровне</strong>, а <strong>турниры</strong> служат объединению спортсменов, популяризации здорового образа жизни, воспитанию здорового поколения и развитию массового спорта.</p>
-                        <br>
-                    </div>
-                    <div class="col-md-9 col-xs-12">
-                        <p>Для Вас созданы все необходимые условия: <strong>лучшие залы в центре Москвы</strong> в шаговой доступности от метро, паркетное покрытие, хорошее освещение, профессиональный спортинвентарь.</p>
-                        <br>
-                    </div>
-                    <div class="col-md-8 col-xs-12">
-                        <p>С нами каждый спортсмен, вне зависимоси от своего уровня, сможет повысить навыки, значительно улучшить физическую форму и <strong>достичь своих спортивных целей.</strong></p>
-                        <br>
-                    </div>
-                    <div class="col-md-7 col-xs-12">
-                        <p>В состав клуба уже входят <strong>4 женских и 2 мужских команд</strong>, которые успешно выстпуают на соревнованиях, занимая <strong>призовые места!</strong></p>
-                    </div>
-                    <div class="col-md-6 col-xs-12">
-                        <br>
-                        <p><strong>Будем рады видеть Вас в новых командах ВК "BarsA"!</strong></p>
-                    </div>
-                    <div class="col-md-6 col-xs-12 text-center">
-                        <button class="button try-button">
-                            <span>Пробная тренировка ></span>
-                        </button>
+                    <div class="row about-description">
+                        <div class="col-xs-12">
+                            <p>Волейбольный клуб "BarsA" <strong>основан в 2016 году.</strong></p>
+                            <br>
+                        </div>
+                        <div class="col-xs-12">
+                            <p><strong>Миссия клуба</strong> - достичь высокой производительности спортсменов, обучить и реализовать их спортивный потенциал.</p>
+                            <br>
+                        </div>
+                        <div class="col-md-11 col-xs-12">
+                            <p>В ВК "BarsA" работают <strong>профессиональные тренеры</strong>, которые по-настоящему любят свое дело.</p>
+                            <p>Наши <strong>тренировки проходят исключительно на высоком уровне</strong>, а <strong>турниры</strong> служат объединению спортсменов, популяризации здорового образа жизни, воспитанию здорового поколения и развитию массового спорта.</p>
+                            <br>
+                        </div>
+                        <div class="col-md-9 col-xs-12">
+                            <p>Для Вас созданы все необходимые условия: <strong>лучшие залы в центре Москвы</strong> в шаговой доступности от метро, паркетное покрытие, хорошее освещение, профессиональный спортинвентарь.</p>
+                            <br>
+                        </div>
+                        <div class="col-md-8 col-xs-12">
+                            <p>С нами каждый спортсмен, вне зависимоси от своего уровня, сможет повысить навыки, значительно улучшить физическую форму и <strong>достичь своих спортивных целей.</strong></p>
+                            <br>
+                        </div>
+                        <div class="col-md-7 col-xs-12">
+                            <p>В состав клуба уже входят <strong>4 женских и 2 мужских команд</strong>, которые успешно выстпуают на соревнованиях, занимая <strong>призовые места!</strong></p>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <br>
+                            <p><strong>Будем рады видеть Вас в новых командах ВК "BarsA"!</strong></p>
+                        </div>
+                        <div class="col-md-6 col-xs-12 text-center">
+                            <button class="button try-button">
+                                <span>Пробная тренировка ></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -990,7 +994,7 @@
             <div class="parallax_layer parallax_layer-near">
                 <img class="ball2" src="/Content/Images/balls/Ball_noShadow.png" alt="" />
             </div>
-            <div class="container_fluid parallax_layer parallax_layer-base">
+            <div class="container-fluid parallax_layer parallax_layer-base">
                 <div class="row top-align">
                     <div class="col-md-2 col-sm-6 col-xs-12 text-left">
                         <h1 class="heading"><span>Абонементы</span></h1>

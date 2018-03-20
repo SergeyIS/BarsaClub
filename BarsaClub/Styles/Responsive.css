@@ -176,7 +176,6 @@
     }
 
     .learn-content {
-        right: 40px;
         top: 180px;
         width: calc(100% - 80px);
     }
@@ -188,16 +187,20 @@
     }
 
     #learn {
-        min-height: 700px;
+        min-height: 750px;
     }
 
     #learn, #trainers, #contacts {
         padding: 40px 20px;
     }
 
-     #home_arenas>.container-fluid{
-         padding: 40px;
-     }
+    #learn{
+        padding-right: 30px;
+    }
+
+    #home_arenas > #more-container {
+        padding: 40px;
+    }
 
     #about {
         min-height: 850px;
@@ -205,7 +208,7 @@
 
     .about-container {
         background-position: left;
-        padding: 40px;
+        padding: 30px;
     }
 
     .center-ball img {
@@ -257,6 +260,14 @@
     .abonement-item {
         float: left;
         margin: unset;
+    }
+
+    .trainer-image{
+        height: 450px;
+    }
+
+    .trainer-image img{
+        max-width: 400px;
     }
 }
 
@@ -363,7 +374,6 @@
     }
 
     .learn-content {
-        right: 40px;
         width: 100%;
     }
 
@@ -383,15 +393,15 @@
             background-image: url(../Content/Images/backgrounds/Tournir.jpg);
         }
 
-    #home_arenas.kuznecky>.container-fluid{
+    #home_arenas.kuznecky > #more-container {
         background-image: url(../Content/Images/backgrounds/kuznecky.jpg);
     }
 
-    #home_arenas.dostoevskaya>.container-fluid {
+    #home_arenas.dostoevskaya > #more-container {
         background-image: url(../Content/Images/backgrounds/dostoevskaya.jpg);
     }
 
-    #home_arenas.oktyabrskaya>.container-fluid {
+    #home_arenas.oktyabrskaya > #more-container {
         background-image: url(../Content/Images/backgrounds/oktyabrskaya.jpg);
     }
 
@@ -495,6 +505,9 @@
 }
 
 @media (min-width: 1200px) {
+    section .container-fluid{
+        max-width: 1366px!important;
+    }
     #abonements .ball2 {
         left: 14%;
     }
@@ -573,9 +586,6 @@
         top: 120px;
     }
 
-    .arena-content {
-        top: 120px;
-    }
 
     #learn {
         min-height: 100vh;
@@ -622,7 +632,7 @@
     }
 
     .trainer-image {
-        height: 600px;
+        height: 500px;
     }
 
         .trainer-image img {

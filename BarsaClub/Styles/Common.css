@@ -917,6 +917,10 @@ header {
     float: right;
 }
 
+#home_arenas .container-headings{
+    padding-right: 10px;
+}
+
 .top-align div.choose-heading {
     height: auto;
 }
@@ -979,11 +983,17 @@ header {
 
 
 .learn-content {
+    margin: 0;
     position: absolute;
-    top: 250px;
+    top: 220px;
     text-shadow: 0 0 5px white;
-    right: 20px;
-    width: calc(100% - 10px);
+    right: unset;
+    left: 0;
+    width: 100%;
+}
+
+.learn-content .col-md-offset-5{
+    padding: 0px;
 }
 
 .arena-content {
@@ -1029,16 +1039,27 @@ header {
     height: 100vh;
 }
 
-    #home_arenas>.container-fluid {
+    #more-container {
         background-position: left;
         background-repeat: no-repeat;
         background-size: cover;
-        padding: 40px 30px;
+        padding: 40px 20px;
+    }
+    #more-container>.container-fluid{
+        position: relative;
+        padding: 0px;
     }
 
 #learn {
     min-height: 950px;
 }
+
+    #learn > .container-fluid {
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
 
     #learn .button {
         margin-top: 50px;
@@ -1137,15 +1158,15 @@ header {
         background-image: url(../Content/Images/backgrounds/Tournir_mobile.jpg);
     }
 
-#home_arenas.kuznecky>.container-fluid{
+#home_arenas.kuznecky>#more-container{
     background-image: url(../Content/Images/backgrounds/kuznecky_mobile.jpg);
 }
 
-#home_arenas.dostoevskaya>.container-fluid {
+#home_arenas.dostoevskaya > #more-container {
     background-image: url(../Content/Images/backgrounds/dostoevskaya_mobile.jpg)
 }
 
-#home_arenas.oktyabrskaya>.container-fluid {
+#home_arenas.oktyabrskaya > #more-container {
     background-image: url(../Content/Images/backgrounds/oktyabrskaya_mobile.jpg);
 }
 
@@ -1234,12 +1255,20 @@ header {
     height: 70px;
 }
 
+.top-align .text-right{
+    padding: 0px;
+}
+
+#trainers{
+    padding: 40px 10px;
+}
+
 #trainers, #contacts {
     height: auto;
 }
 
 .trainer-image {
-    height: 350px;
+    height: 400px;
     position: relative;
 }
 
@@ -1261,8 +1290,9 @@ header {
     transform: translate(-50%, 0%);
     bottom: 0;
     left: 50%;
+    max-height: 100%;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     filter: drop-shadow(-10px 10px 20px rgba(0,51,153,0.4));
 }
 
@@ -1300,7 +1330,7 @@ header {
     background-image: url(../Content/Images/Logos/aboutFullHD.png);
     background-repeat: no-repeat;
     background-position: 35% 0%;
-    padding: 40px 20px;
+    padding: 40px 0px;
 }
 
 .center-ball img {
@@ -1318,7 +1348,7 @@ header {
     #abonements .parallax_layer > .row {
         position: relative;
         top: 50px;
-        margin: 30px;
+        margin: 10px;
     }
 
     #abonements .top-align .text-left,
@@ -1403,6 +1433,7 @@ header {
     background-image: url(../Content/Images/backgrounds/footer.jpg);
     background-position: center;
     background-size: cover;
+    z-index: -1;
 }
 
     #contacts a {
@@ -1560,4 +1591,15 @@ label.error {
 
 #choose_level.error span{
     color: #ffffff;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: #ffffff;
+}
+
+.main-logo {
+    position: absolute;
+    top: calc(50% - 100px);
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
