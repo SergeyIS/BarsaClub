@@ -1609,3 +1609,7 @@ label.error {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+#mainNav>.container-fluid{
+    max-width: 1396px;
+}
