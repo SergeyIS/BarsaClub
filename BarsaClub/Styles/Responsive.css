@@ -111,6 +111,10 @@
 }
 
 @media (min-width: 768px) {
+    .navbar-brand{
+        height: 50px;
+    }
+
     .choose-button{
         padding: 0px 10px;
     }
@@ -152,6 +156,7 @@
     }
 
     .head-number {
+        height: 50px;
         text-align: right;
     }
 

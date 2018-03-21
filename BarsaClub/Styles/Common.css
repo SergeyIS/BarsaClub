@@ -21,7 +21,13 @@ html, body {
 }
 
 .navbar-toggle {
+    margin-top: 6px;
+    margin-bottom: 0px;
     margin-right: 0px;
+}
+
+.navbar-brand{
+    height: 40px;
 }
 
 .navbar-brand img {
@@ -457,8 +463,8 @@ h1 {
 .parallax {
     -webkit-perspective: 300px;
     perspective: 300px;
-    margin-top: 100px;
-    height: calc(100% - 100px);
+    margin-top: 80px;
+    height: calc(100% - 80px);
     overflow-x: hidden;
     overflow-y: auto;
     /*-webkit-overflow-scrolling: touch;*/
@@ -896,7 +902,7 @@ header {
 }
 
 .head-number {
-    height: 50px;
+    height: 40px;
     display: flex;
     justify-content: center;
     flex-flow: column;
