@@ -435,6 +435,10 @@ $(document).ready(function () {
     CheckEmptyCalendar();
     FillDates(0);
     ShowCalendarColumn(0);
+    ChooseLearn('beach');
+    ChooseLearn('tournir');
     ChooseLearn('classic');
+    ChooseArena('oktyabrskaya');
+    ChooseArena('dostoevskaya');
     ChooseArena('kuznecky');
 });

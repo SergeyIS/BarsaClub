@@ -329,7 +329,7 @@
         width: calc(100% / 2);
     }
 
-    header .half_layer safari{
+    header .half_layer.safari{
         width: calc(110% / 2);
     }
 
@@ -358,7 +358,7 @@
         width: calc(70% / 2);
     }
 
-    #abonements .parallax_layer-fore safari{
+    #abonements .parallax_layer-fore.safari{
         width: calc(25% / 2);
     }
 
@@ -521,7 +521,7 @@
         width: calc(80% / 2);
     }
 
-    #abonements .parallax_layer-fore safari{
+    #abonements .parallax_layer-fore.safari{
         width: calc(30% / 2);
     }
 

@@ -530,9 +530,10 @@ h1 {
     display: none;
 }
 
-header .half_layer safari {
+header .half_layer.safari {
     width: calc(100% / 2 - 30px);
 }
+
 
 .parallax_layer-center {
     -webkit-transform: translateZ(60px) scale(.8);
@@ -1045,12 +1046,16 @@ header {
     height: 100vh;
 }
 
-    #more-container {
-        background-position: left;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding: 40px 20px;
-    }
+#more-container {
+    -webkit-transition: 0.4s cubic-bezier(1, -1, 0, 2);
+    -moz-transition: 0.4s cubic-bezier(1, -1, 0, 2);
+    -o-transition: 0.4s cubic-bezier(1, -1, 0, 2);
+    transition: 0.4s cubic-bezier(1, -1, 0, 2);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 40px 20px;
+}
     #more-container>.container-fluid{
         position: relative;
         padding: 0px;
