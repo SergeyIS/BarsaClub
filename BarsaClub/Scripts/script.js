@@ -10,20 +10,6 @@ $(function () {
             e.preventDefault(e);
         }
     });
-    //var applyForm = $("#apply_form");
-    //var applyContainer = $("#apply_form_container");
-    //var neededHeight = applyForm.innerHeight() + 80 + 'px';
-    //var windowHeight = $(window).innerHeight();
-    //if (parseInt(neededHeight) <= parseInt(windowHeight)) {
-    //    applyContainer.css('height', neededHeight);
-    //}
-    //applyForm.resize(function (e) {
-    //    var neededHeight = applyForm.innerHeight() + 80 + 'px';
-    //    var windowHeight = $(window).innerHeight();
-    //    if (parseInt(neededHeight) <= parseInt(windowHeight)) {
-    //        applyContainer.css('height', neededHeight);
-    //    }
-    //});
   $("#phone").mask("+7(999) 999-99-99");
   $("#payphone").mask("+7(999) 999-99-99");
   $("#pay_form").validate({

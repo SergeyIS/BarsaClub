@@ -194,17 +194,24 @@
     #learn {
         min-height: 750px;
     }
-
-    #learn, #trainers, #contacts {
-        padding: 40px 20px;
-    }
+        
+        #learn, #trainers, #contacts {
+            padding: 40px 20px;
+        }
 
     #learn{
-        padding-right: 30px;
+        padding: 0px;
     }
 
-    #home_arenas > #more-container {
+    #learn .back{
+        min-height: 750px;
+        padding: 40px 20px;
+        padding-left: 30px;
+    }
+
+    #more-container {
         padding: 40px;
+        background-position: 10% 50%;
     }
 
     #about {
@@ -383,18 +390,23 @@
     }
 
     #learn {
-        min-height: 750px;
+        min-height: 780px;
     }
 
-        #learn.classic {
+        #learn .back{
+            min-height: 780px;
+            background-position: 40% 50%;
+        } 
+        
+        #learn.classic .back {
             background-image: url(../Content/Images/backgrounds/Classic.jpg);
         }
 
-        #learn.beach {
+        #learn.beach .back{
             background-image: url(../Content/Images/backgrounds/Beach.jpg);
         }
 
-        #learn.tournir {
+        #learn.tournir .back{
             background-image: url(../Content/Images/backgrounds/Tournir.jpg);
         }
 
@@ -408,6 +420,10 @@
 
     #home_arenas.oktyabrskaya > #more-container {
         background-image: url(../Content/Images/backgrounds/oktyabrskaya.jpg);
+    }
+
+    #more-container{
+        background-position: 20% 50%;
     }
 
     .learn-content > .text-left,
@@ -591,10 +607,15 @@
         top: 120px;
     }
 
-
-    #learn {
-        min-height: 100vh;
+    #learn .back {
+        background-position: center;
     }
+
+    #more-container {
+        background-position: 20% 50%;
+        background-size: 1634px;
+    }
+
 
     #home_arenas {
         min-height: 800px;
@@ -643,4 +664,9 @@
         .trainer-image img {
             max-width: 400px;
         }
+
+    #more-container{
+        background-position: 70% 50%;
+        background-size: 1734px;
+    }
 }
