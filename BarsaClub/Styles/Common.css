@@ -20,7 +20,13 @@ html, body {
     color: #ffffff;
 }
 
+.navbar-default .navbar-toggle:focus, 
+.navbar-default .navbar-toggle:hover {
+    background: transparent;
+}
+
 .navbar-toggle {
+    padding: 5px 10px;
     margin-top: 6px;
     margin-bottom: 0px;
     margin-right: 0px;
@@ -463,8 +469,8 @@ h1 {
 .parallax {
     -webkit-perspective: 300px;
     perspective: 300px;
-    margin-top: 80px;
-    height: calc(100% - 80px);
+    margin-top: 50px;
+    height: calc(100% - 50px);
     overflow-x: hidden;
     overflow-y: auto;
     /*-webkit-overflow-scrolling: touch;*/
@@ -610,6 +616,7 @@ header {
     height: calc(100vh - 50px);
     min-height: auto;
     padding-top: 20px;
+    margin-top: 30px;
     /*
     background-image: url(../Content/Images/zal.jpg);
     background-size: cover;
@@ -626,6 +633,7 @@ header {
 }
 
 .button-container {
+    width: 100%;
     position: absolute;
     bottom: 130px;
     left: 50%;
@@ -650,8 +658,23 @@ header {
     box-shadow: -2px 8px 3em rgba(234,195,6,0.7);
 }
 
+.menu {
+    padding: 0;
+    margin: 5px 10px;
+    margin-top: 15px;
+    margin-right: 0px;
+    border: none;
+}
+
+.menu-tel{
+    float: right;
+    display: block;
+    margin-right: 10px;
+}
+
 .try-button {
-    width: 320px;
+    width: calc(100% - 60px);
+    max-width: 320px;
     text-align: center;
     padding: 0px;
 }
@@ -909,6 +932,7 @@ header {
     flex-flow: column;
     align-content: start;
     text-align: left;
+    display: none;
     padding-left: 5px;
 }
 

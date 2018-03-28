@@ -97,6 +97,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\Icons\menu.svg" />
+    <Content Include="Content\Images\Icons\phone.svg" />
     <Content Include="Content\Images\people\BorisenkoFullHD.png" />
     <Content Include="Content\Images\people\BorisenkoHD.png" />
     <Content Include="Global.asax" />

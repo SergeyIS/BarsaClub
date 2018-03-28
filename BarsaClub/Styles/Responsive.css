@@ -155,7 +155,12 @@
         padding-top: 30px;
     }
 
+    .menu-tel{
+        display: none;
+    }
+
     .head-number {
+        display: flex;
         height: 50px;
         text-align: right;
     }

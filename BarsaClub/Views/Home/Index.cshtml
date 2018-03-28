@@ -254,7 +254,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row events" id="line_3">
+                @*<div class="row events" id="line_3">
                     <div class="col col-190">
                         <span>Октябрьская</span>
                     </div>
@@ -307,7 +307,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*@
             </div>
             <div class="container-fluid mobile">
                 <div class="row week-days">
@@ -367,11 +367,11 @@
                                     <span>Кузнецкий мост</span>
                                 </div>
                             </div>
-                            <div class="row stations">
+                            @*<div class="row stations">
                                 <div class="one-station">
                                     <span>Октябрьская</span>
                                 </div>
-                            </div>
+                            </div>*@
                         </div>
                     </div>
                     <div class="col col-rest">
@@ -481,7 +481,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row events" id="line_mobile_3">
+                            @*<div class="row events" id="line_mobile_3">
                                 <div class="col col-140">
                                     <div>
                                         <div class="time-container" data-day='0' data-metroId='3'>
@@ -531,7 +531,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>*@
                             <!-- .row.events -->
                         </div>
                         <!-- .container-fluid -->
@@ -544,28 +544,29 @@
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle collapsed menu" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <img src="~/Content/Images/Icons/menu.svg" alt="" height="20"/>
                 </button>
+                <a type="button" class="tel-button menu menu-tel" href="tel:+79266807732">
+                    <img src="~/Content/Images/Icons/phone.svg" alt="" height="20"/>
+                </a>
                 <a class="navbar-brand page-scroll" href="#page-top">
                     <img src="/Content/Images/Icons/small_logo_small8.png">
                     <span>BARSA</span>
                 </a>
             </div>
             <div class="col-lg-8 col-md-7 col-sm-7 col-xs-12 text-center head-titles">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-center">
-                        <li><a class="page-scroll active" href="#page-top">Главная</a></li>
-                        <li><a class="page-scroll" href="#learn">Обучение</a></li>
-                        <li><a class="page-scroll" href="#home_arenas">Залы</a></li>
-                        <li><a class="page-scroll" href="#trainers">Тренеры</a></li>
-                        <li><a class="page-scroll" href="#about">О нас</a></li>
-                        <li><a class="page-scroll" href="#contacts">Контакты</a></li>
-                    </ul>
-                </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-center">
+                            <li><a class="page-scroll active" href="#page-top">Главная</a></li>
+                            <li><a class="page-scroll" href="#learn">Обучение</a></li>
+                            <li><a class="page-scroll" href="#home_arenas">Залы</a></li>
+                            <li><a class="page-scroll" href="#trainers">Тренеры</a></li>
+                            <li><a class="page-scroll" href="#about">О нас</a></li>
+                            <li><a class="page-scroll" href="#contacts">Контакты</a></li>
+                        </ul>
+                    </div>
             </div>
             <div class="col-lg-2 col-sm-3 col-xs-12 head-number">
                 <a href="tel:+79266807732">+7 (926) 680-77-32</a>
@@ -683,6 +684,7 @@
             </div>
         </section>
         <section id="home_arenas" class="parallax_group">
+            <div class="parallax_layer parallax_layer-base" style="background: white"></div>
             <div class="parallax_layer parallax_layer-base" id="more-container">
                 <div class="container-fluid">
                     <div class="row top-align">

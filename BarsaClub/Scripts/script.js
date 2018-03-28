@@ -53,6 +53,7 @@ $(function () {
       }
   });
 });
+
 $('a.page-scroll').bind('click', function(event) {
     var currentScroll = $('#body-container').scrollTop();
     var $anchor = $(this);
