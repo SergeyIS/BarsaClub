@@ -111,6 +111,14 @@
 }
 
 @media (min-width: 768px) {
+    #abonements .parallax_layer>.row{
+        margin: 10px;
+    }
+    .heading-less{
+        margin-left: unset;
+        margin-right: unset;
+    }
+
     .navbar-brand{
         height: 50px;
     }
@@ -201,7 +209,7 @@
     }
         
         #learn, #trainers, #contacts {
-            padding: 40px 20px;
+            padding: 40px 25px;
         }
 
     #learn{
@@ -250,6 +258,10 @@
         transform: translate(-50%, -50%);
     }
 
+    #abonements .parallax_layer > .row.top-align {
+        margin: 10px 30px;
+    }
+
     #abonements .parallax_layer-fore {
         display: block;
         left: unset;
@@ -285,6 +297,11 @@
 
     .trainer-image img{
         max-width: 400px;
+    }
+
+    #trainers .heading{
+        margin-left: 0px;
+        margin-right: 0px;
     }
 }
 
