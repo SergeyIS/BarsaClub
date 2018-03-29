@@ -869,6 +869,7 @@ header {
 
 
 .submit-button {
+    min-width: unset;
     width: 100%;
     max-width: 320px;
     box-shadow: 0px 5px 1em rgba(234,195,6,0.7);
