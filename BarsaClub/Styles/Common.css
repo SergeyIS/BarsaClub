@@ -194,6 +194,7 @@ h1 {
 
         .week-days .col-140 button {
             width: 100%;
+            padding: 2px;
             background: #eeeeee;
             border: none;
             outline: none;
